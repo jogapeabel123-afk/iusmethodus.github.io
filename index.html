@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IUS Methodus | Asesoría Jurídica y Metodológica</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ==== ESTILOS GENERALES ==== */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #0c2233;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    /* ==== HERO ==== */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.3em;
+      max-width: 700px;
+    }
+    .btn {
+      background-color: #00bcd4;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #008c9e;
+    }
+
+    /* ==== SECCIONES ==== */
+    section {
+      padding: 60px 10%;
+    }
+    h2 {
+      text-align: center;
+      color: #0c2233;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      width: 80px;
+      height: 3px;
+      background: #00bcd4;
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    /* ==== SERVICIOS ==== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      padding: 25px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card i {
+      font-size: 40px;
+      color: #00bcd4;
+      margin-bottom: 15px;
+    }
+
+    /* ==== BLOG ==== */
+    .blog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .post {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .post img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .post-content {
+      padding: 20px;
+    }
+    .post-content h3 {
+      margin: 0 0 10px;
+      color: #0c2233;
+    }
+    .post-content p {
+      color: #555;
+    }
+
+    /* ==== FOOTER ==== */
+    footer {
+      background: #0c2233;
+      color: #fff;
+      text-align: center;
+      padding: 40px 10%;
+    }
+    footer .social a {
+      color: #00bcd4;
+      margin: 0 10px;
+      font-size: 1.5em;
+      text-decoration: none;
+    }
+    footer .social a:hover {
+      color: #fff;
+    }
+    footer p {
+      margin-top: 15px;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <img src="logo.png" alt="IUS Methodus Logo">
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#blog">Blog</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>IUS METHODUS</h1>
+    <p>Asesoría Jurídica Integral y Asistencia Metodológica para Tesis y Trabajos Académicos</p>
+    <a href="#servicios" class="btn">Conoce nuestros servicios</a>
+  </section>
+
+  <!-- ===== SERVICIOS JURÍDICOS ===== -->
+  <section id="servicios">
+    <h2>Asesoría Jurídica</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fa-solid fa-scale-balanced"></i>
+        <h3>Derecho Civil</h3>
+        <p>Contratos, obligaciones, responsabilidad civil, sucesiones y más.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-briefcase"></i>
+        <h3>Derecho Laboral</h3>
+        <p>Defensa de derechos laborales, despidos, negociación colectiva y asesoría empresarial.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-landmark"></i>
+        <h3>Derecho Penal</h3>
+        <p>Defensa penal integral y estrategias de terminación anticipada y acuerdos reparatorios.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-gavel"></i>
+        <h3>Derecho Administrativo</h3>
+        <p>Procedimientos sancionadores, licitaciones, recursos administrativos y defensa del administrado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICIOS METODOLÓGICOS ===== -->
+  <section id="metodologia">
+    <h2>Asesoría Metodológica</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>Tesis de Pregrado y Posgrado</h3>
+        <p>Diseño metodológico, redacción académica, marco teórico, resultados y defensa.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-book"></i>
+        <h3>Artículos Científicos</h3>
+        <p>Redacción y revisión de papers, artículos de revisión y publicaciones indexadas.</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h3>Capacitación en Investigación</h3>
+        <p>Cursos, talleres y conferencias sobre metodología y escritura científica.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG ===== -->
+  <section id="blog">
+    <h2>Publicaciones Recientes</h2>
+    <div class="blog">
+      <div class="post">
+        <img src="https://images.unsplash.com/photo-1603574670812-d24560880210?auto=format&fit=crop&w=900&q=60" alt="Artículo 1">
+        <div class="post-content">
+          <h3>La evolución del Derecho Penal Peruano</h3>
+          <p>Una revisión sobre las reformas más relevantes y su impacto en la justicia moderna.</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="https://images.unsplash.com/photo-1532619675605-743472f5af15?auto=format&fit=crop&w=900&q=60" alt="Artículo 2">
+        <div class="post-content">
+          <h3>La Metodología como Fundamento del Conocimiento</h3>
+          <p>Cómo una correcta estructura metodológica transforma una tesis en investigación sólida.</p>
+        </div>
+      </div>
+      <div class="post">
+        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=900&q=60" alt="Artículo 3">
+        <div class="post-content">
+          <h3>Derecho y Filosofía: una mirada a la justicia contemporánea</h3>
+          <p>La importancia del pensamiento filosófico en la práctica jurídica del siglo XXI.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contacto">
+    <h2>Contáctanos</h2>
+    <p>Escríbenos para una consulta jurídica o metodológica:</p>
+    <p><i class="fa-solid fa-envelope"></i> contacto@iusmethodus.com</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p>&copy; 2025 IUS Methodus | Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
