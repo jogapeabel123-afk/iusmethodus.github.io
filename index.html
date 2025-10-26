@@ -21,15 +21,12 @@
   <style>
     body { font-family: 'Poppins', sans-serif; }
 
-    /* Hero y header */
+    /* Header y footer */
     header, footer {
       background-color: #0f1f3d;
       color: #c19a6b;
     }
-
-    header a:hover, footer a:hover {
-      color: #fff;
-    }
+    header a:hover, footer a:hover { color: #fff; }
 
     /* Botones */
     .btn-animate {
@@ -71,9 +68,12 @@
 <section class="relative h-screen w-full flex flex-col justify-center items-center text-center text-white overflow-hidden">
   <!-- Video local -->
   <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-    <source src="videos/fondo.mp4" type="video/mp4">
+    <source src="fondo.mp4" type="video/mp4">
     Tu navegador no soporta video.
   </video>
+
+  <!-- Overlay sutil tipo gradiente -->
+  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/10 to-black/20 z-0"></div>
 
   <!-- Contenido sobre el video -->
   <div class="relative z-10 px-4">
@@ -85,9 +85,6 @@
       Conoce nuestros servicios
     </a>
   </div>
-
-  <!-- Overlay -->
-  <div class="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-0"></div>
 </section>
 
 <!-- SOBRE NOSOTROS -->
@@ -158,16 +155,20 @@
     <p class="mb-2"><i class="fa-solid fa-envelope"></i> piero.morales@iusmethodus.com</p>
     <p class="mb-4"><i class="fa-solid fa-phone"></i> 962620529</p>
     <div class="flex justify-center space-x-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-      <a href="#" class="hover:text-white"><i class="fab fa-facebook fa-lg"></i></a>
-      <a href="#" class="hover:text-white"><i class="fab fa-twitter fa-lg"></i></a>
-      <a href="#" class="hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a href="#" class="hover:text-white"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="#" class="hover:text-white"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="#" class="hover:text-white"><i class="fab fa-linkedin fa-2x"></i></a>
     </div>
-    <p class="text-gray-200 mt-4">&copy; 2025 IUS Methodus | Todos los derechos reservados.</p>
+    <p class="text-gray-400">&copy; 2025 IUS Methodus. Todos los derechos reservados.</p>
   </div>
 </footer>
 
 <script>
-  AOS.init({ duration: 1000, once: true });
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
 </script>
+
 </body>
 </html>
