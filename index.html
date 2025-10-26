@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IUS Methodus | Asesoría Jurídica y Metodológica</title>
-  <!-- TailwindCSS -->
+  <!-- TailwindCSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -18,7 +18,8 @@
     <nav class="space-x-6 font-medium">
       <a href="#sobre-nosotros" class="hover:text-white">Sobre Nosotros</a>
       <a href="#servicios" class="hover:text-white">Servicios</a>
-      <a href="blog/index.html" class="hover:text-white">Blog</a>
+      <a href="#blog" class="hover:text-white">Blog</a>
+      <a href="#revista" class="hover:text-white">Revista Indexada</a>
       <a href="#contacto" class="hover:text-white">Contacto</a>
     </nav>
   </div>
@@ -37,8 +38,9 @@
     <h2 class="text-3xl font-bold text-blue-900 mb-4">Sobre Nosotros</h2>
     <p class="text-gray-700 text-lg">
       En <strong>IUS Methodus</strong> brindamos asesoría jurídica y metodológica con un enfoque integral. 
-      Combinamos experiencia profesional en todas las ramas del derecho peruano con compromiso académico, 
-      ofreciendo asistencia en casos prácticos y formación teórica. Nuestro objetivo es garantizar excelencia, ética y resultados efectivos en cada proyecto.
+      Combinamos experiencia profesional en todas las ramas del derecho peruano (civil, laboral, inmobiliario, registral, compliance, tributario) 
+      con compromiso académico, ofreciendo asistencia en casos prácticos y formación teórica. 
+      También impartimos cursos y talleres sobre metodología de tesis y trabajos académicos.
     </p>
   </div>
 </section>
@@ -48,7 +50,6 @@
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-bold text-blue-900 text-center mb-12">Servicios Jurídicos y Metodológicos</h2>
     <div class="grid md:grid-cols-3 gap-8 mb-16">
-      <!-- Servicios ejemplos -->
       <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
         <i class="fa-solid fa-scale-balanced text-4xl text-yellow-400 mb-4"></i>
         <h3 class="font-semibold text-xl mb-2">Derecho Civil</h3>
@@ -61,44 +62,33 @@
       </div>
       <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
         <i class="fa-solid fa-gavel text-4xl text-yellow-400 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Cursos y Metodología</h3>
-        <p>Capacitación práctica y académica en investigación, tesis, redacción y metodologías avanzadas.</p>
+        <h3 class="font-semibold text-xl mb-2">Metodología</h3>
+        <p>Asesoría en tesis y trabajos académicos, cursos, talleres y capacitación práctica en investigación.</p>
       </div>
-      <!-- Puedes añadir los demás servicios siguiendo el mismo patrón -->
+      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+        <i class="fa-solid fa-building text-4xl text-yellow-400 mb-4"></i>
+        <h3 class="font-semibold text-xl mb-2">Derecho Inmobiliario</h3>
+        <p>Asesoría en contratos de compra-venta, arrendamiento, y regulación inmobiliaria tanto práctica como académica.</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+        <i class="fa-solid fa-book text-4xl text-yellow-400 mb-4"></i>
+        <h3 class="font-semibold text-xl mb-2">Compliance y Tributario</h3>
+        <p>Asesoría en cumplimiento normativo, regulaciones tributarias y planes de compliance corporativo.</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
+        <i class="fa-solid fa-file-signature text-4xl text-yellow-400 mb-4"></i>
+        <h3 class="font-semibold text-xl mb-2">Derecho Registral</h3>
+        <p>Gestión de inscripciones y trámites registrales, análisis de títulos y procedimientos legales.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- BLOG DESTACADO -->
-<section class="py-20 bg-white">
+<!-- BLOG -->
+<section id="blog" class="py-20 bg-white">
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-bold text-blue-900 text-center mb-12">Publicaciones Recientes</h2>
     <div class="grid md:grid-cols-3 gap-8">
       <!-- Artículo ejemplo -->
       <div class="bg-gray-100 rounded overflow-hidden shadow hover:shadow-lg transition">
-        <img src="https://images.unsplash.com/photo-1603574670812-d24560880210?auto=format&fit=crop&w=900&q=60" alt="Artículo 1" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="font-semibold text-xl mb-2">La evolución del Derecho Penal Peruano</h3>
-          <p class="text-gray-700 text-sm">Revisión sobre las reformas más relevantes y su impacto en la justicia moderna.</p>
-          <a href="blog/articulo1.html" class="text-blue-900 font-semibold mt-2 inline-block">Leer más →</a>
-        </div>
-      </div>
-    </div>
-    <div class="text-center mt-10">
-      <a href="blog/index.html" class="px-6 py-3 bg-yellow-400 text-blue-900 font-semibold rounded hover:bg-yellow-300 transition">Ver más publicaciones</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-blue-900 text-yellow-400 py-12 mt-12">
-  <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-2xl font-semibold mb-4">Contáctanos</h2>
-    <p class="mb-2"><i class="fa-solid fa-envelope"></i> piero.morales@iusmethodus.com</p>
-    <p class="mb-4"><i class="fa-solid fa-phone"></i> 962620529</p>
-    <p class="text-gray-200 mt-4">&copy; 2025 IUS Methodus | Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-</body>
-</html>
+        <img src="https://images.unsplash.com/photo-160
