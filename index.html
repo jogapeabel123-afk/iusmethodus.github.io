@@ -22,10 +22,6 @@
     body { font-family: 'Poppins', sans-serif; }
 
     /* Hero y header */
-    .gradient-hero {
-      background: linear-gradient(135deg, #0f1f3d, #192a4a);
-    }
-
     header, footer {
       background-color: #0f1f3d;
       color: #c19a6b;
@@ -71,15 +67,27 @@
   </div>
 </header>
 
-<!-- HERO -->
-<section class="gradient-hero h-screen flex flex-col justify-center items-center text-center text-white px-4">
-  <h1 class="text-5xl md:text-7xl font-bold mb-4" data-aos="fade-down">IUS METHODUS</h1>
-  <p class="text-xl md:text-2xl max-w-3xl mb-6" data-aos="fade-up" data-aos-delay="200">
-    Asesoría Jurídica Integral y Asistencia Metodológica para Tesis y Trabajos Académicos
-  </p>
-  <a href="#servicios" class="px-8 py-4 font-semibold rounded-lg btn-animate shadow-md" data-aos="zoom-in" data-aos-delay="400">
-    Conoce nuestros servicios
-  </a>
+<!-- HERO CON VIDEO DE FONDO -->
+<section class="relative h-screen w-full flex flex-col justify-center items-center text-center text-white overflow-hidden">
+  <!-- Video -->
+  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+    <source src="https://cdn.pixabay.com/vimeo/290/office-3184305.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+  </video>
+
+  <!-- Contenido sobre el video -->
+  <div class="relative z-10 px-4">
+    <h1 class="text-5xl md:text-7xl font-bold mb-4" data-aos="fade-down">IUS METHODUS</h1>
+    <p class="text-xl md:text-2xl max-w-3xl mb-6" data-aos="fade-up" data-aos-delay="200">
+      Asesoría Jurídica Integral y Asistencia Metodológica para Tesis y Trabajos Académicos
+    </p>
+    <a href="#servicios" class="px-8 py-4 font-semibold rounded-lg btn-animate shadow-md" data-aos="zoom-in" data-aos-delay="400">
+      Conoce nuestros servicios
+    </a>
+  </div>
+
+  <!-- Overlay semi-transparente -->
+  <div class="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-0"></div>
 </section>
 
 <!-- SOBRE NOSOTROS -->
