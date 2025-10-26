@@ -8,87 +8,107 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
   <!-- FontAwesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Scroll suave -->
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
 
 <!-- HEADER -->
-<header class="bg-blue-900 text-yellow-400 sticky top-0 z-50">
+<header class="bg-blue-900 text-yellow-400 sticky top-0 z-50 shadow-md">
   <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
     <img src="logo.png" alt="IUS Methodus Logo" class="h-14">
     <nav class="space-x-6 font-medium">
-      <a href="#sobre-nosotros" class="hover:text-white">Sobre Nosotros</a>
-      <a href="#servicios" class="hover:text-white">Servicios</a>
-      <a href="#blog" class="hover:text-white">Blog</a>
-      <a href="#revista" class="hover:text-white">Revista Indexada</a>
-      <a href="#contacto" class="hover:text-white">Contacto</a>
+      <a href="#sobre-nosotros" class="hover:text-white transition duration-300">Sobre Nosotros</a>
+      <a href="#servicios" class="hover:text-white transition duration-300">Servicios</a>
+      <a href="#revista" class="hover:text-white transition duration-300">Revista Indexada</a>
+      <a href="#contacto" class="hover:text-white transition duration-300">Contacto</a>
     </nav>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="bg-blue-800 text-white h-[90vh] flex flex-col justify-center items-center text-center px-4">
-  <h1 class="text-4xl md:text-6xl font-bold mb-4">IUS METHODUS</h1>
-  <p class="text-lg md:text-2xl max-w-3xl">Asesoría Jurídica Integral y Asistencia Metodológica para Tesis y Trabajos Académicos</p>
-  <a href="#servicios" class="mt-6 px-6 py-3 bg-yellow-400 text-blue-900 font-semibold rounded hover:bg-yellow-300 transition">Conoce nuestros servicios</a>
+<section class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white h-[90vh] flex flex-col justify-center items-center text-center px-4">
+  <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg animate-fadeIn">IUS METHODUS</h1>
+  <p class="text-lg md:text-2xl max-w-3xl drop-shadow-md animate-fadeIn animate-delay-200">Asesoría Jurídica Integral y Asistencia Metodológica para Tesis y Trabajos Académicos</p>
+  <a href="#servicios" class="mt-6 px-8 py-4 bg-yellow-400 text-blue-900 font-semibold rounded-lg hover:bg-yellow-300 transition transform hover:scale-105 shadow-md animate-bounce">Conoce nuestros servicios</a>
 </section>
 
 <!-- SOBRE NOSOTROS -->
 <section id="sobre-nosotros" class="py-20 bg-white">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-blue-900 mb-4">Sobre Nosotros</h2>
-    <p class="text-gray-700 text-lg">
-      En <strong>IUS Methodus</strong> brindamos asesoría jurídica y metodológica con un enfoque integral. 
-      Combinamos experiencia profesional en todas las ramas del derecho peruano (civil, laboral, inmobiliario, registral, compliance, tributario) 
-      con compromiso académico, ofreciendo asistencia en casos prácticos y formación teórica. 
-      También impartimos cursos y talleres sobre metodología de tesis y trabajos académicos.
+  <div class="max-w-5xl mx-auto text-center px-4">
+    <h2 class="text-3xl font-bold text-blue-900 mb-6 animate-fadeInUp">Sobre Nosotros</h2>
+    <p class="text-gray-700 text-lg leading-relaxed animate-fadeInUp animate-delay-200">
+      En <strong>IUS Methodus</strong> brindamos asesoría jurídica y metodológica con un enfoque integral. Combinamos experiencia profesional en todas las ramas del derecho peruano (civil, laboral, inmobiliario, registral, compliance, tributario) con compromiso académico, ofreciendo asistencia tanto en casos prácticos como en estudio académico. También impartimos cursos y talleres sobre metodología de tesis y trabajos académicos.
     </p>
   </div>
 </section>
 
 <!-- SERVICIOS -->
 <section id="servicios" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold text-blue-900 text-center mb-12">Servicios Jurídicos y Metodológicos</h2>
-    <div class="grid md:grid-cols-3 gap-8 mb-16">
-      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-        <i class="fa-solid fa-scale-balanced text-4xl text-yellow-400 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Derecho Civil</h3>
-        <p>Contratos, obligaciones, responsabilidad civil, sucesiones; tanto en casos prácticos como en estudio académico.</p>
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-blue-900 text-center mb-12 animate-fadeInUp">Nuestros Servicios</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Servicio 1 -->
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-500">
+        <i class="fa-solid fa-scale-balanced text-5xl text-yellow-400 mb-6 animate-bounce"></i>
+        <h3 class="font-semibold text-2xl mb-4">Derecho Civil</h3>
+        <p class="text-gray-700">Contratos, obligaciones, responsabilidad civil, sucesiones; tanto en casos prácticos como en estudio académico.</p>
       </div>
-      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-        <i class="fa-solid fa-briefcase text-4xl text-yellow-400 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Derecho Laboral</h3>
-        <p>Defensa de derechos laborales, negociación colectiva y asesoría académica en derecho laboral.</p>
+      <!-- Servicio 2 -->
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-500">
+        <i class="fa-solid fa-briefcase text-5xl text-yellow-400 mb-6 animate-bounce"></i>
+        <h3 class="font-semibold text-2xl mb-4">Derecho Laboral</h3>
+        <p class="text-gray-700">Defensa de derechos laborales, negociación colectiva y asesoría académica en derecho laboral.</p>
       </div>
-      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-        <i class="fa-solid fa-gavel text-4xl text-yellow-400 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Metodología</h3>
-        <p>Asesoría en tesis y trabajos académicos, cursos, talleres y capacitación práctica en investigación.</p>
+      <!-- Servicio 3 -->
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-500">
+        <i class="fa-solid fa-gavel text-5xl text-yellow-400 mb-6 animate-bounce"></i>
+        <h3 class="font-semibold text-2xl mb-4">Metodología</h3>
+        <p class="text-gray-700">Asesoría en tesis y trabajos académicos, cursos, talleres y capacitación práctica en investigación.</p>
       </div>
-      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-        <i class="fa-solid fa-building text-4xl text-yellow-400 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Derecho Inmobiliario</h3>
-        <p>Asesoría en contratos de compra-venta, arrendamiento, y regulación inmobiliaria tanto práctica como académica.</p>
+      <!-- Servicio 4 -->
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-500">
+        <i class="fa-solid fa-building text-5xl text-yellow-400 mb-6 animate-bounce"></i>
+        <h3 class="font-semibold text-2xl mb-4">Derecho Inmobiliario</h3>
+        <p class="text-gray-700">Asesoría en contratos de compra-venta, arrendamiento, y regulación inmobiliaria.</p>
       </div>
-      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-        <i class="fa-solid fa-book text-4xl text-yellow-400 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Compliance y Tributario</h3>
-        <p>Asesoría en cumplimiento normativo, regulaciones tributarias y planes de compliance corporativo.</p>
+      <!-- Servicio 5 -->
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-500">
+        <i class="fa-solid fa-book text-5xl text-yellow-400 mb-6 animate-bounce"></i>
+        <h3 class="font-semibold text-2xl mb-4">Compliance & Tributario</h3>
+        <p class="text-gray-700">Asesoría en cumplimiento normativo, regulaciones tributarias y planes de compliance corporativo.</p>
       </div>
-      <div class="bg-white p-6 rounded shadow hover:shadow-lg transition">
-        <i class="fa-solid fa-file-signature text-4xl text-yellow-400 mb-4"></i>
-        <h3 class="font-semibold text-xl mb-2">Derecho Registral</h3>
-        <p>Gestión de inscripciones y trámites registrales, análisis de títulos y procedimientos legales.</p>
+      <!-- Servicio 6 -->
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-500">
+        <i class="fa-solid fa-file-signature text-5xl text-yellow-400 mb-6 animate-bounce"></i>
+        <h3 class="font-semibold text-2xl mb-4">Derecho Registral</h3>
+        <p class="text-gray-700">Gestión de inscripciones y trámites registrales, análisis de títulos y procedimientos legales.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BLOG -->
-<section id="blog" class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl font-bold text-blue-900 text-center mb-12">Publicaciones Recientes</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Artículo ejemplo -->
-      <div class="bg-gray-100 rounded overflow-hidden shadow hover:shadow-lg transition">
-        <img src="https://images.unsplash.com/photo-160
+<!-- REVISTA INDEXADA -->
+<section id="revista" class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto text-center px-4">
+    <h2 class="text-3xl font-bold text-blue-900 mb-6 animate-fadeInUp">Revista Indexada</h2>
+    <p class="text-gray-700 text-lg mb-6 animate-fadeInUp animate-delay-200">Próximamente podrás acceder a nuestra revista académica con artículos indexados en derecho y metodología.</p>
+    <a href="#" class="px-8 py-4 bg-yellow-400 text-blue-900 font-semibold rounded-lg hover:bg-yellow-300 transition transform hover:scale-105 shadow-md animate-bounce">Visitar Revista →</a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<footer id="contacto" class="bg-blue-900 text-yellow-400 py-12 mt-12">
+  <div class="max-w-7xl mx-auto text-center px-4">
+    <h2 class="text-2xl font-semibold mb-4 animate-fadeInUp">Contáctanos</h2>
+    <p class="mb-2"><i class="fa-solid fa-envelope"></i> piero.morales@iusmethodus.com</p>
+    <p class="mb-4"><i class="fa-solid fa-phone"></i> 962620529</p>
+    <div class="flex justify-center space-x-6 mb-4 animate-fadeInUp animate-delay-200">
+      <!-- Redes sociales placeholders -->
+      <a href="#" class="hover:text-white transition duration-300"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" class="hover:text-white transition duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="#" class="hover:text-white transition duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+    <p class="text-gray-200 mt-4">&copy; 2025
