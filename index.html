@@ -1,174 +1,1182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IUS Methodus | Asesoría Jurídica y Metodológica</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IusMethodus — Asesoría jurídica integral y asistencia metodológica para tesis y trabajos de investigación en Perú. Derecho civil, laboral, inmobiliario y más.">
+<meta name="keywords" content="asesoría jurídica Perú, asesor de tesis Lima, metodología investigación, derecho laboral, derecho civil, IusMethodus">
+<meta property="og:title" content="IusMethodus | Asesoría Jurídica & Metodológica">
+<meta property="og:description" content="Combinamos experiencia legal con asesoría metodológica. Tu proyecto, nuestro compromiso.">
+<title>IusMethodus | Asesoría Jurídica & Metodológica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+/* ─── Reset & Variables ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0C1A2E;
+  --navy-2:#142236;
+  --navy-3:#1C2E46;
+  --gold:#C89A3E;
+  --gold-2:#DFB46A;
+  --gold-pale:#F7EDD8;
+  --white:#FAFAF8;
+  --off:#F4F1EB;
+  --gray:#E5E0D6;
+  --text:#1A1A2A;
+  --text-2:#4A5568;
+  --text-3:#8A9BB0;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --r:12px;
+  --r-lg:20px;
+  --tr:0.3s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);color:var(--text);background:var(--white);line-height:1.6;overflow-x:hidden}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+/* ─── Utilities ─── */
+.container{max-width:1140px;margin:0 auto;padding:0 24px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
+.badge{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:4px 14px;border-radius:99px;border:1px solid var(--gold);color:var(--gold);background:transparent;margin-bottom:16px}
+.section-title{font-family:var(--serif);font-size:clamp(32px,5vw,48px);font-weight:700;line-height:1.2;color:var(--navy);margin-bottom:16px}
+.section-title.light{color:var(--white)}
+.section-sub{font-size:17px;color:var(--text-2);max-width:580px;line-height:1.7}
+.section-sub.light{color:var(--text-3)}
+.divider{width:48px;height:3px;background:var(--gold);border-radius:2px;margin:20px 0 32px}
 
-  <!-- TailwindCSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+/* ─── Navigation ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;transition:var(--tr)}
+nav.scrolled{background:rgba(12,26,46,.97);backdrop-filter:blur(12px);padding:12px 0;box-shadow:0 2px 24px rgba(0,0,0,.3)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:38px;width:auto}
+.nav-logo span{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--white);letter-spacing:.02em}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;font-weight:400;transition:color var(--tr)}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy)!important;padding:8px 20px;border-radius:var(--r);font-weight:500!important;transition:background var(--tr)!important}
+.nav-cta:hover{background:var(--gold-2)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:var(--tr)}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--navy);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--white);text-decoration:none;font-size:24px;font-family:var(--serif)}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--white);background:none;border:none}
 
-  <!-- AOS Animate On Scroll -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+/* ─── Hero ─── */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--navy)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,26,46,.95) 0%,rgba(12,26,46,.7) 100%)}
+.hero-pattern{position:absolute;inset:0;background-image:radial-gradient(rgba(200,154,62,.08) 1px,transparent 1px);background-size:32px 32px}
+.hero-content{position:relative;z-index:2;padding:120px 0 80px}
+.hero-eyebrow{font-size:13px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.hero-title{font-family:var(--serif);font-size:clamp(40px,7vw,72px);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:24px;max-width:720px}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:18px;color:rgba(255,255,255,.72);max-width:520px;line-height:1.75;margin-bottom:40px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--navy);padding:14px 28px;border-radius:var(--r);font-weight:500;font-size:15px;text-decoration:none;transition:var(--tr);border:2px solid var(--gold)}
+.btn-primary:hover{background:var(--gold-2);border-color:var(--gold-2)}
+.btn-outline{background:transparent;color:var(--white);padding:14px 28px;border-radius:var(--r);font-weight:400;font-size:15px;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);transition:var(--tr)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:48px;margin-top:64px;padding-top:40px;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+.stat-val{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--gold)}
+.stat-label{font-size:13px;color:rgba(255,255,255,.5);margin-top:2px}
 
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+/* ─── Sobre Nosotros ─── */
+#sobre{padding:100px 0;background:var(--white)}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.sobre-img-wrap{position:relative}
+.sobre-card{background:var(--navy);border-radius:var(--r-lg);padding:40px;color:var(--white)}
+.sobre-card-quote{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--gold-2);line-height:1.5;margin-bottom:24px}
+.sobre-card-name{font-weight:500;font-size:15px}
+.sobre-card-role{font-size:13px;color:var(--text-3)}
+.sobre-accent{position:absolute;bottom:-20px;right:-20px;width:120px;height:120px;background:var(--gold-pale);border-radius:var(--r-lg);z-index:-1}
+.sobre-text p{font-size:16px;color:var(--text-2);line-height:1.8;margin-bottom:16px}
+.sobre-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.pill{background:var(--off);border-radius:99px;padding:6px 16px;font-size:13px;color:var(--text-2);border:1px solid var(--gray)}
 
-  <style>
-    body { font-family: 'Poppins', sans-serif; }
+/* ─── Servicios Legales ─── */
+#servicios{padding:100px 0;background:var(--off)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:48px}
+.service-card{background:var(--white);border-radius:var(--r-lg);padding:32px;border:1px solid var(--gray);transition:var(--tr);position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform var(--tr)}
+.service-card:hover{border-color:transparent;box-shadow:0 12px 40px rgba(12,26,46,.12);transform:translateY(-4px)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:48px;height:48px;background:var(--gold-pale);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
+.service-card h3{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.service-card p{font-size:14px;color:var(--text-2);line-height:1.7}
+.service-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--gold);margin-top:16px;text-decoration:none;transition:gap var(--tr)}
+.service-link:hover{gap:10px}
 
-    /* Header y footer */
-    header, footer {
-      background-color: #0f1f3d;
-      color: #c19a6b;
-    }
-    header a:hover, footer a:hover { color: #fff; }
+/* ─── Metodología ─── */
+#metodologia{padding:100px 0;background:var(--navy)}
+.meto-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:48px}
+.meto-steps{display:flex;flex-direction:column;gap:0}
+.meto-step{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.meto-step:last-child{border-bottom:none}
+.step-num{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--gold);opacity:.4;min-width:44px;line-height:1}
+.step-content h4{font-size:17px;font-weight:500;color:var(--white);margin-bottom:6px}
+.step-content p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.65}
+.meto-services{display:flex;flex-direction:column;gap:16px}
+.meto-service-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:24px;transition:var(--tr)}
+.meto-service-card:hover{background:rgba(200,154,62,.1);border-color:rgba(200,154,62,.3)}
+.meto-service-card h4{font-family:var(--serif);font-size:18px;color:var(--white);margin-bottom:8px}
+.meto-service-card p{font-size:13px;color:rgba(255,255,255,.55);line-height:1.65}
+.meto-tag{display:inline-block;font-size:11px;padding:2px 10px;border-radius:99px;background:rgba(200,154,62,.2);color:var(--gold);margin-top:10px}
 
-    /* Botones */
-    .btn-animate {
-      transition: all 0.3s ease;
-      background-color: #c19a6b;
-      color: #0f1f3d;
-    }
-    .btn-animate:hover {
-      transform: translateY(-3px) scale(1.05);
-      background-color: #b5885f;
-    }
+/* ─── Apps ─── */
+#apps{padding:100px 0;background:var(--white)}
+.apps-tabs{display:flex;gap:4px;background:var(--off);border-radius:var(--r);padding:4px;margin-bottom:40px;width:fit-content}
+.app-tab{padding:10px 24px;border-radius:calc(var(--r) - 2px);font-size:14px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text-2);transition:var(--tr)}
+.app-tab.active{background:var(--white);color:var(--navy);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.app-panel{display:none}.app-panel.active{display:block}
+.app-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.app-desc h3{font-family:var(--serif);font-size:28px;color:var(--navy);margin-bottom:12px}
+.app-desc p{font-size:15px;color:var(--text-2);line-height:1.75;margin-bottom:8px}
+.app-feature{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-2);margin-top:8px}
+.app-feature::before{content:'✓';color:var(--gold);font-weight:700}
+/* Form */
+.app-form{background:var(--off);border-radius:var(--r-lg);padding:32px;border:1px solid var(--gray)}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:13px;font-weight:500;color:var(--text);margin-bottom:8px}
+.form-group input,.form-group select{width:100%;padding:10px 14px;border-radius:var(--r);border:1px solid var(--gray);background:var(--white);font-family:var(--sans);font-size:14px;color:var(--text);outline:none;transition:border-color var(--tr)}
+.form-group input:focus,.form-group select:focus{border-color:var(--gold)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.btn-calc{width:100%;padding:14px;background:var(--navy);color:var(--white);border:none;border-radius:var(--r);font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;transition:var(--tr)}
+.btn-calc:hover{background:var(--navy-3)}
+/* Results */
+.calc-result{margin-top:24px;background:var(--white);border-radius:var(--r-lg);border:1px solid var(--gray);overflow:hidden;display:none}
+.result-header{background:var(--navy);padding:20px 24px}
+.result-header h4{font-family:var(--serif);font-size:18px;color:var(--white)}
+.result-body{padding:24px}
+.result-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--gray);font-size:14px}
+.result-row:last-child{border-bottom:none}
+.result-row span:first-child{color:var(--text-2)}
+.result-row span:last-child{font-weight:500;color:var(--navy)}
+.result-total{background:var(--gold-pale);border-radius:var(--r);padding:16px 20px;margin-top:16px;display:flex;justify-content:space-between;align-items:center}
+.result-total span:first-child{font-weight:500;color:var(--navy)}
+.result-total span:last-child{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--gold)}
+.result-disclaimer{font-size:11px;color:var(--text-3);margin-top:12px;line-height:1.5}
+/* Wizard */
+.wizard-step{display:none}.wizard-step.active{display:block}
+.wizard-progress{display:flex;gap:8px;margin-bottom:28px}
+.wizard-dot{width:8px;height:8px;border-radius:50%;background:var(--gray);transition:var(--tr)}
+.wizard-dot.active{background:var(--gold)}
+.wizard-dot.done{background:var(--navy)}
+.wizard-title{font-size:16px;font-weight:500;color:var(--navy);margin-bottom:16px}
+.option-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.option-btn{padding:12px;border-radius:var(--r);border:1.5px solid var(--gray);background:var(--white);font-family:var(--sans);font-size:13px;color:var(--text-2);cursor:pointer;text-align:left;transition:var(--tr)}
+.option-btn:hover,.option-btn.selected{border-color:var(--gold);color:var(--navy);background:var(--gold-pale)}
+.wizard-nav{display:flex;gap:10px;margin-top:16px}
+.btn-next{flex:1;padding:12px;background:var(--navy);color:var(--white);border:none;border-radius:var(--r);font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:var(--tr)}
+.btn-next:hover{background:var(--navy-3)}
+.btn-back{padding:12px 20px;background:transparent;color:var(--text-2);border:1px solid var(--gray);border-radius:var(--r);font-family:var(--sans);font-size:14px;cursor:pointer;transition:var(--tr)}
+.btn-back:hover{border-color:var(--navy);color:var(--navy)}
+.thesis-result{background:var(--white);border-radius:var(--r-lg);border:1px solid var(--gray);overflow:hidden;margin-top:8px}
+.thesis-result-header{background:var(--navy);padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.thesis-result-header h4{font-family:var(--serif);font-size:16px;color:var(--white)}
+.thesis-section{padding:16px 20px;border-bottom:1px solid var(--gray)}
+.thesis-section:last-child{border-bottom:none}
+.thesis-section h5{font-size:13px;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.thesis-section ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.thesis-section ul li{font-size:13px;color:var(--text-2);padding-left:12px;position:relative}
+.thesis-section ul li::before{content:'›';position:absolute;left:0;color:var(--gold)}
+.thesis-tip{background:var(--gold-pale);border-left:3px solid var(--gold);padding:10px 14px;font-size:12px;color:var(--text-2);line-height:1.55;margin:0 20px 16px;border-radius:0 var(--r) var(--r) 0}
 
-    /* Tarjetas */
-    .card-animate {
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .card-animate:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 25px 40px rgba(0,0,0,0.2);
-    }
-  </style>
+/* ─── Precios ─── */
+#precios{padding:100px 0;background:var(--off)}
+.price-toggle{display:flex;gap:4px;background:var(--white);border-radius:var(--r);padding:4px;margin-bottom:48px;width:fit-content;border:1px solid var(--gray)}
+.price-tab{padding:10px 24px;border-radius:calc(var(--r) - 2px);font-size:14px;font-weight:500;cursor:pointer;border:none;background:transparent;color:var(--text-2);transition:var(--tr)}
+.price-tab.active{background:var(--navy);color:var(--white)}
+.price-panel{display:none}.price-panel.active{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.price-card{background:var(--white);border-radius:var(--r-lg);padding:32px;border:1px solid var(--gray);position:relative;transition:var(--tr)}
+.price-card:hover{box-shadow:0 12px 40px rgba(12,26,46,.1)}
+.price-card.featured{border-color:var(--gold);border-width:2px}
+.featured-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:12px;font-weight:500;padding:4px 16px;border-radius:99px;white-space:nowrap}
+.price-name{font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--text-3);margin-bottom:12px}
+.price-amount{font-family:var(--serif);font-size:40px;font-weight:700;color:var(--navy);line-height:1}
+.price-unit{font-size:14px;color:var(--text-3);margin-left:4px}
+.price-desc{font-size:13px;color:var(--text-2);margin:12px 0 20px;line-height:1.65}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.price-features li{font-size:14px;color:var(--text-2);padding-left:22px;position:relative}
+.price-features li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700}
+.btn-price{display:block;text-align:center;padding:13px;border-radius:var(--r);font-size:14px;font-weight:500;text-decoration:none;transition:var(--tr)}
+.btn-price-outline{border:1.5px solid var(--navy);color:var(--navy)}
+.btn-price-outline:hover{background:var(--navy);color:var(--white)}
+.btn-price-filled{background:var(--gold);color:var(--navy);border:1.5px solid var(--gold)}
+.btn-price-filled:hover{background:var(--gold-2)}
+
+/* ─── Testimonios ─── */
+#testimonios{padding:100px 0;background:var(--navy)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+.testi-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-lg);padding:28px;transition:var(--tr)}
+.testi-card:hover{background:rgba(255,255,255,.09)}
+.testi-stars{color:var(--gold);font-size:16px;margin-bottom:16px;letter-spacing:2px}
+.testi-text{font-family:var(--serif);font-size:17px;font-style:italic;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:20px}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--navy)}
+.testi-name{font-size:14px;font-weight:500;color:var(--white)}
+.testi-role{font-size:12px;color:var(--text-3)}
+
+/* ─── Blog ─── */
+#blog{padding:100px 0;background:var(--white)}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;margin-top:48px}
+.blog-card{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--gray);transition:var(--tr)}
+.blog-card:hover{box-shadow:0 12px 40px rgba(12,26,46,.1);transform:translateY(-4px)}
+.blog-thumb{height:180px;background:var(--navy-3);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.blog-cat{position:absolute;top:16px;left:16px;background:var(--gold);color:var(--navy);font-size:11px;font-weight:500;padding:4px 12px;border-radius:99px;text-transform:uppercase;letter-spacing:.06em}
+.blog-thumb-icon{font-size:48px;opacity:.2}
+.blog-body{padding:24px}
+.blog-date{font-size:12px;color:var(--text-3);margin-bottom:10px}
+.blog-title{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--navy);line-height:1.35;margin-bottom:10px}
+.blog-excerpt{font-size:13px;color:var(--text-2);line-height:1.65}
+.blog-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--gold);text-decoration:none;margin-top:16px;transition:gap var(--tr)}
+.blog-link:hover{gap:10px}
+
+/* ─── Contacto ─── */
+#contacto{padding:100px 0;background:var(--off)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:48px}
+.contact-info{display:flex;flex-direction:column;gap:28px}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.contact-icon{width:44px;height:44px;background:var(--navy);border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-item h4{font-size:14px;font-weight:500;color:var(--navy);margin-bottom:4px}
+.contact-item p,.contact-item a{font-size:15px;color:var(--text-2);text-decoration:none}
+.contact-item a:hover{color:var(--gold)}
+.contact-social{display:flex;gap:12px;margin-top:8px}
+.social-btn{width:40px;height:40px;border-radius:var(--r);background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:17px;text-decoration:none;transition:var(--tr)}
+.social-btn:hover{background:var(--gold)}
+.contact-form-wrap{background:var(--white);border-radius:var(--r-lg);padding:36px;border:1px solid var(--gray)}
+.contact-form-wrap h3{font-family:var(--serif);font-size:24px;color:var(--navy);margin-bottom:24px}
+.cform-group{margin-bottom:18px}
+.cform-group label{display:block;font-size:13px;font-weight:500;color:var(--text);margin-bottom:8px}
+.cform-group input,.cform-group select,.cform-group textarea{width:100%;padding:11px 14px;border-radius:var(--r);border:1px solid var(--gray);background:var(--off);font-family:var(--sans);font-size:14px;color:var(--text);outline:none;transition:border-color var(--tr);resize:vertical}
+.cform-group input:focus,.cform-group select:focus,.cform-group textarea:focus{border-color:var(--gold);background:var(--white)}
+.btn-send{width:100%;padding:14px;background:var(--gold);color:var(--navy);border:none;border-radius:var(--r);font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;transition:var(--tr)}
+.btn-send:hover{background:var(--gold-2)}
+.form-success{display:none;text-align:center;padding:20px;background:var(--gold-pale);border-radius:var(--r);margin-top:16px;font-size:14px;color:var(--navy)}
+
+/* ─── Footer ─── */
+footer{background:var(--navy);padding:60px 0 32px;color:rgba(255,255,255,.6)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand span{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white)}
+.footer-brand p{font-size:13px;margin-top:12px;line-height:1.7;max-width:260px}
+.footer-col h4{font-size:13px;font-weight:500;color:var(--white);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);text-decoration:none;margin-bottom:10px;transition:color var(--tr)}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:12px;flex-wrap:wrap;gap:12px}
+.footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none}
+.footer-bottom a:hover{color:var(--gold)}
+
+/* ─── WhatsApp ─── */
+.wa-btn{position:fixed;bottom:28px;right:28px;z-index:900;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);text-decoration:none;transition:var(--tr);animation:wa-pulse 2.5s infinite}
+.wa-btn:hover{background:#22c55e;transform:scale(1.08)}
+.wa-btn svg{width:28px;height:28px;fill:white}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 32px rgba(37,211,102,.65)}}
+
+/* ─── Responsive ─── */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .sobre-grid,.meto-grid,.app-wrap,.contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-stats{gap:28px}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .option-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column}
+  .btn-primary,.btn-outline{text-align:center}
+  .price-panel.active{grid-template-columns:1fr}
+}
+</style>
 </head>
-<body class="bg-gray-50 text-gray-800 scroll-smooth">
+<body>
 
-<!-- HEADER -->
-<header class="fixed w-full z-50 shadow-md">
-  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-    <img src="logo.png" alt="IUS Methodus Logo" class="h-14">
-    <nav class="space-x-6 font-semibold">
-      <a href="#sobre-nosotros" class="transition">Sobre Nosotros</a>
-      <a href="#servicios" class="transition">Servicios</a>
-      <a href="#revista" class="transition">Revista</a>
-      <a href="#contacto" class="transition">Contacto</a>
-    </nav>
+<!-- ─── Navigation ─── -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="logo.png" alt="IusMethodus" onerror="this.style.display='none'">
+        <span>IusMethodus</span>
+      </a>
+      <div class="nav-links">
+        <a href="#sobre">Nosotros</a>
+        <a href="#servicios">Servicios Legales</a>
+        <a href="#metodologia">Metodología</a>
+        <a href="#apps">Herramientas</a>
+        <a href="#precios">Precios</a>
+        <a href="#blog">Revista</a>
+        <a href="#contacto" class="nav-cta">Consultar ahora</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </div>
-</header>
+</nav>
 
-<!-- HERO CON VIDEO DE FONDO -->
-<section class="relative h-screen w-full flex flex-col justify-center items-center text-center text-white overflow-hidden">
-  <!-- Video local -->
-  <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="#sobre" onclick="toggleMenu()">Nosotros</a>
+  <a href="#servicios" onclick="toggleMenu()">Servicios Legales</a>
+  <a href="#metodologia" onclick="toggleMenu()">Metodología</a>
+  <a href="#apps" onclick="toggleMenu()">Herramientas</a>
+  <a href="#precios" onclick="toggleMenu()">Precios</a>
+  <a href="#blog" onclick="toggleMenu()">Revista</a>
+  <a href="#contacto" onclick="toggleMenu()">Contactar</a>
+</div>
+
+<!-- ─── Hero ─── -->
+<section id="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
     <source src="fondo.mp4" type="video/mp4">
-    Tu navegador no soporta video.
   </video>
-
-  <!-- Overlay sutil tipo gradiente -->
-  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/10 to-black/20 z-0"></div>
-
-  <!-- Contenido sobre el video -->
-  <div class="relative z-10 px-4">
-    <h1 class="text-5xl md:text-7xl font-bold mb-4" data-aos="fade-down">IUS METHODUS</h1>
-    <p class="text-xl md:text-2xl max-w-3xl mb-6" data-aos="fade-up" data-aos-delay="200">
-      Asesoría Jurídica Integral y Asistencia Metodológica para Tesis y Trabajos Académicos
-    </p>
-    <a href="#servicios" class="px-8 py-4 font-semibold rounded-lg btn-animate shadow-md" data-aos="zoom-in" data-aos-delay="400">
-      Conoce nuestros servicios
-    </a>
-  </div>
-</section>
-
-<!-- SOBRE NOSOTROS -->
-<section id="sobre-nosotros" class="py-24 bg-gradient-to-r from-gray-50 to-gray-100">
-  <div class="max-w-5xl mx-auto text-center px-4">
-    <h2 class="text-4xl font-bold text-blue-900 mb-6" data-aos="fade-up">Sobre Nosotros</h2>
-    <p class="text-gray-700 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-      En <strong>IUS Methodus</strong> brindamos asesoría jurídica y metodológica con un enfoque integral. Combinamos experiencia profesional en todas las ramas del derecho peruano (civil, laboral, inmobiliario, registral, compliance, tributario) con compromiso académico, ofreciendo asistencia tanto en casos prácticos como en estudio académico. También impartimos cursos y talleres sobre metodología de tesis y trabajos académicos.
-    </p>
-  </div>
-</section>
-
-<!-- SERVICIOS -->
-<section id="servicios" class="py-24 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-4xl font-bold text-blue-900 text-center mb-12" data-aos="fade-up">Nuestros Servicios</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Tarjetas de servicios -->
-      <div class="bg-white p-8 rounded-xl card-animate" data-aos="fade-up">
-        <i class="fa-solid fa-scale-balanced text-5xl text-[#c19a6b] mb-6"></i>
-        <h3 class="font-semibold text-2xl mb-4">Derecho Civil</h3>
-        <p class="text-gray-700">Contratos, obligaciones, responsabilidad civil, sucesiones; tanto en casos prácticos como en estudio académico.</p>
+  <div class="hero-overlay"></div>
+  <div class="hero-pattern"></div>
+  <div class="container">
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Lima, Perú · Asesoría Jurídica & Metodológica</p>
+      <h1 class="hero-title reveal reveal-delay-1">Derecho y <em>metodología</em> al servicio de tu éxito</h1>
+      <p class="hero-desc reveal reveal-delay-2">Brindamos asesoría jurídica integral en todas las ramas del derecho peruano y acompañamiento metodológico para tesis y trabajos de investigación.</p>
+      <div class="hero-btns reveal reveal-delay-3">
+        <a href="#contacto" class="btn-primary">Agenda tu consulta</a>
+        <a href="#servicios" class="btn-outline">Ver servicios</a>
       </div>
-      <div class="bg-white p-8 rounded-xl card-animate" data-aos="fade-up" data-aos-delay="100">
-        <i class="fa-solid fa-briefcase text-5xl text-[#c19a6b] mb-6"></i>
-        <h3 class="font-semibold text-2xl mb-4">Derecho Laboral</h3>
-        <p class="text-gray-700">Defensa de derechos laborales, negociación colectiva y asesoría académica en derecho laboral.</p>
-      </div>
-      <div class="bg-white p-8 rounded-xl card-animate" data-aos="fade-up" data-aos-delay="200">
-        <i class="fa-solid fa-gavel text-5xl text-[#c19a6b] mb-6"></i>
-        <h3 class="font-semibold text-2xl mb-4">Metodología</h3>
-        <p class="text-gray-700">Asesoría en tesis y trabajos académicos, cursos, talleres y capacitación práctica en investigación.</p>
-      </div>
-      <div class="bg-white p-8 rounded-xl card-animate" data-aos="fade-up" data-aos-delay="300">
-        <i class="fa-solid fa-building text-5xl text-[#c19a6b] mb-6"></i>
-        <h3 class="font-semibold text-2xl mb-4">Derecho Inmobiliario</h3>
-        <p class="text-gray-700">Asesoría en contratos de compra-venta, arrendamiento, y regulación inmobiliaria.</p>
-      </div>
-      <div class="bg-white p-8 rounded-xl card-animate" data-aos="fade-up" data-aos-delay="400">
-        <i class="fa-solid fa-book text-5xl text-[#c19a6b] mb-6"></i>
-        <h3 class="font-semibold text-2xl mb-4">Compliance & Tributario</h3>
-        <p class="text-gray-700">Asesoría en cumplimiento normativo, regulaciones tributarias y planes de compliance corporativo.</p>
-      </div>
-      <div class="bg-white p-8 rounded-xl card-animate" data-aos="fade-up" data-aos-delay="500">
-        <i class="fa-solid fa-file-signature text-5xl text-[#c19a6b] mb-6"></i>
-        <h3 class="font-semibold text-2xl mb-4">Derecho Registral</h3>
-        <p class="text-gray-700">Gestión de inscripciones y trámites registrales, análisis de títulos y procedimientos legales.</p>
+      <div class="hero-stats reveal reveal-delay-4">
+        <div>
+          <div class="stat-val">6+</div>
+          <div class="stat-label">Áreas del derecho</div>
+        </div>
+        <div>
+          <div class="stat-val">100%</div>
+          <div class="stat-label">Compromiso con tu caso</div>
+        </div>
+        <div>
+          <div class="stat-val">2 en 1</div>
+          <div class="stat-label">Legal + Metodológico</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- REVISTA -->
-<section id="revista" class="py-24 bg-gradient-to-r from-gray-50 to-gray-100 text-center">
-  <h2 class="text-4xl font-bold text-blue-900 mb-6" data-aos="fade-up">Revista Indexada</h2>
-  <p class="text-gray-700 text-lg mb-6" data-aos="fade-up" data-aos-delay="200">
-    Próximamente podrás acceder a nuestra revista académica con artículos indexados en derecho y metodología.
-  </p>
-  <a href="#" class="px-8 py-4 font-semibold rounded-lg btn-animate shadow-md" data-aos="zoom-in" data-aos-delay="400">
-    Visitar Revista →
-  </a>
+<!-- ─── Sobre Nosotros ─── -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-img-wrap reveal">
+        <div class="sobre-card">
+          <p class="sobre-card-quote">"Combinamos rigor jurídico y excelencia académica para resolver los desafíos legales y de investigación de nuestros clientes."</p>
+          <div class="sobre-card-name">Piero Morales</div>
+          <div class="sobre-card-role">Fundador · IusMethodus</div>
+        </div>
+        <div class="sobre-accent"></div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <span class="badge">Quiénes somos</span>
+        <h2 class="section-title">Un proyecto que une el derecho y la academia</h2>
+        <div class="divider"></div>
+        <div class="sobre-text">
+          <p>En <strong>IusMethodus</strong> creemos que el conocimiento jurídico y el rigor metodológico no son mundos separados. Somos el único estudio en Perú que combina ambas disciplinas bajo un mismo techo, con la misma excelencia profesional.</p>
+          <p>Ofrecemos asesoría en todas las ramas del derecho peruano — civil, laboral, inmobiliario, registral, compliance y tributario — al mismo tiempo que acompañamos a estudiantes e investigadores en la elaboración de sus tesis, monografías y trabajos académicos.</p>
+          <p>Nuestro enfoque es integral: entendemos que un abogado que investiga es mejor abogado, y que un investigador que conoce el derecho produce mejor ciencia.</p>
+        </div>
+        <div class="sobre-pills">
+          <span class="pill">Derecho Civil</span>
+          <span class="pill">Derecho Laboral</span>
+          <span class="pill">Metodología APA 7</span>
+          <span class="pill">Tesis de pregrado</span>
+          <span class="pill">Maestría & Doctorado</span>
+          <span class="pill">Compliance</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CONTACTO -->
-<footer id="contacto" class="py-12">
-  <div class="max-w-7xl mx-auto text-center px-4">
-    <h2 class="text-3xl font-semibold mb-4" data-aos="fade-up">Contáctanos</h2>
-    <p class="mb-2"><i class="fa-solid fa-envelope"></i> piero.morales@iusmethodus.com</p>
-    <p class="mb-4"><i class="fa-solid fa-phone"></i> 962620529</p>
-    <div class="flex justify-center space-x-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-      <a href="#" class="hover:text-white"><i class="fab fa-facebook fa-2x"></i></a>
-      <a href="#" class="hover:text-white"><i class="fab fa-twitter fa-2x"></i></a>
-      <a href="#" class="hover:text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+<!-- ─── Servicios Legales ─── -->
+<section id="servicios">
+  <div class="container">
+    <div class="reveal">
+      <span class="badge">Servicios jurídicos</span>
+      <h2 class="section-title">Asesoría legal en todas las ramas</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Desde contratos hasta litigios, cubrimos todas las áreas del derecho peruano con profesionalismo y dedicación.</p>
     </div>
-    <p class="text-gray-400">&copy; 2025 IUS Methodus. Todos los derechos reservados.</p>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">⚖️</div>
+        <h3>Derecho Civil</h3>
+        <p>Contratos, obligaciones, responsabilidad civil, sucesiones y herencias. Redacción, revisión y asesoría en toda clase de acuerdos civiles.</p>
+        <a href="#contacto" class="service-link">Consultar →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">👷</div>
+        <h3>Derecho Laboral</h3>
+        <p>Defensa de derechos del trabajador, liquidaciones, despidos arbitrarios, negociación colectiva y asesoría para empleadores.</p>
+        <a href="#contacto" class="service-link">Consultar →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">🏠</div>
+        <h3>Derecho Inmobiliario</h3>
+        <p>Compraventa de inmuebles, contratos de arrendamiento, saneamiento de propiedades y resolución de conflictos inmobiliarios.</p>
+        <a href="#contacto" class="service-link">Consultar →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">📋</div>
+        <h3>Derecho Registral</h3>
+        <p>Inscripciones en Registros Públicos, análisis de títulos, inmatriculaciones y gestión de trámites ante la SUNARP.</p>
+        <a href="#contacto" class="service-link">Consultar →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">🏛️</div>
+        <h3>Compliance & Tributario</h3>
+        <p>Cumplimiento normativo, programas de compliance corporativo, asesoría tributaria y prevención de riesgos legales empresariales.</p>
+        <a href="#contacto" class="service-link">Consultar →</a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">🛡️</div>
+        <h3>Consulta Express</h3>
+        <p>¿Tienes una duda legal urgente? Respuesta profesional en 24-48 horas. Ideal para situaciones que requieren orientación inmediata.</p>
+        <a href="#contacto" class="service-link">Agendar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Metodología ─── -->
+<section id="metodologia">
+  <div class="container">
+    <div class="reveal">
+      <span class="badge">Asesoría metodológica</span>
+      <h2 class="section-title light">Tu tesis, en manos expertas</h2>
+      <div class="divider"></div>
+      <p class="section-sub light">Desde el planteamiento del problema hasta la sustentación. Te acompañamos en cada etapa del proceso de investigación.</p>
+    </div>
+    <div class="meto-grid">
+      <div class="meto-steps reveal reveal-delay-1">
+        <div class="meto-step">
+          <span class="step-num">01</span>
+          <div class="step-content">
+            <h4>Planteamiento y diseño</h4>
+            <p>Definimos tu problema de investigación, objetivos, hipótesis y el diseño metodológico más adecuado para tu carrera y nivel académico.</p>
+          </div>
+        </div>
+        <div class="meto-step">
+          <span class="step-num">02</span>
+          <div class="step-content">
+            <h4>Marco teórico y antecedentes</h4>
+            <p>Construcción del sustento teórico con fuentes indexadas, búsqueda en bases de datos académicas y citación correcta en APA 7.</p>
+          </div>
+        </div>
+        <div class="meto-step">
+          <span class="step-num">03</span>
+          <div class="step-content">
+            <h4>Metodología e instrumentos</h4>
+            <p>Diseño de la población y muestra, elaboración de cuestionarios, guías de entrevista y validación de instrumentos de recolección.</p>
+          </div>
+        </div>
+        <div class="meto-step">
+          <span class="step-num">04</span>
+          <div class="step-content">
+            <h4>Revisión y sustentación</h4>
+            <p>Revisión de borradores, corrección de observaciones del jurado y preparación estratégica para la defensa oral de la tesis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="meto-services reveal reveal-delay-2">
+        <div class="meto-service-card">
+          <h4>Tesis de pregrado</h4>
+          <p>Acompañamiento completo o por capítulos para bachilleres y titulación profesional en todas las carreras.</p>
+          <span class="meto-tag">Más solicitado</span>
+        </div>
+        <div class="meto-service-card">
+          <h4>Tesis de maestría</h4>
+          <p>Investigaciones de mayor profundidad metodológica. Apoyo en diseños cualitativos, cuantitativos y mixtos.</p>
+          <span class="meto-tag">Alto nivel</span>
+        </div>
+        <div class="meto-service-card">
+          <h4>Monografías y ensayos</h4>
+          <p>Trabajos académicos para cursos de pregrado y posgrado. Estructura, argumentación y citación correcta.</p>
+          <span class="meto-tag">Entrega rápida</span>
+        </div>
+        <div class="meto-service-card">
+          <h4>Artículos y publicaciones</h4>
+          <p>Redacción y revisión de artículos para revistas académicas indexadas. Adaptación a normas de publicación.</p>
+          <span class="meto-tag">Especializado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Web Apps ─── -->
+<section id="apps">
+  <div class="container">
+    <div class="reveal">
+      <span class="badge">Herramientas gratuitas</span>
+      <h2 class="section-title">Calculadoras y asistentes online</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Herramientas prácticas para resolver tus dudas legales y metodológicas al instante.</p>
+    </div>
+    <div class="apps-tabs reveal" style="margin-top:36px">
+      <button class="app-tab active" onclick="switchApp(0)">⚖️ Calculadora laboral</button>
+      <button class="app-tab" onclick="switchApp(1)">📚 Asistente de tesis</button>
+    </div>
+
+    <!-- App 1: Calculadora Laboral -->
+    <div class="app-panel active" id="app0">
+      <div class="app-wrap">
+        <div class="app-desc reveal">
+          <h3>Calculadora de liquidación laboral</h3>
+          <p>Calcula en segundos cuánto te corresponde recibir al término de tu relación laboral según la legislación peruana vigente.</p>
+          <div class="app-feature">CTS proporcional al tiempo trabajado</div>
+          <div class="app-feature">Vacaciones truncas no gozadas</div>
+          <div class="app-feature">Gratificación trunca del semestre</div>
+          <div class="app-feature">Indemnización por despido arbitrario</div>
+          <p style="margin-top:20px;font-size:13px;color:var(--text-3);line-height:1.6">Resultado referencial. Para un cálculo definitivo y asesoría personalizada, contáctanos.</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="app-form">
+            <div class="form-group">
+              <label>Remuneración mensual bruta (S/.)</label>
+              <input type="number" id="c-sal" placeholder="Ej: 2500" min="0">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Fecha de ingreso</label>
+                <input type="date" id="c-ing">
+              </div>
+              <div class="form-group">
+                <label>Fecha de cese</label>
+                <input type="date" id="c-ces">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Motivo del cese</label>
+              <select id="c-mot">
+                <option value="renuncia">Renuncia voluntaria</option>
+                <option value="despido">Despido arbitrario</option>
+                <option value="mutuo">Acuerdo mutuo</option>
+                <option value="vencimiento">Vencimiento de contrato</option>
+              </select>
+            </div>
+            <button class="btn-calc" onclick="calcLiquidacion()">Calcular mi liquidación</button>
+            <div class="calc-result" id="calc-result">
+              <div class="result-header"><h4>Tu liquidación estimada</h4></div>
+              <div class="result-body">
+                <div class="result-row"><span>CTS proporcional</span><span id="r-cts">—</span></div>
+                <div class="result-row"><span>Vacaciones truncas</span><span id="r-vac">—</span></div>
+                <div class="result-row"><span>Gratificación trunca</span><span id="r-gra">—</span></div>
+                <div class="result-row" id="r-ind-row"><span>Indemnización</span><span id="r-ind">—</span></div>
+                <div class="result-total">
+                  <span>Total estimado</span>
+                  <span id="r-total">—</span>
+                </div>
+                <p class="result-disclaimer">* Cálculo referencial basado en la legislación laboral peruana (D.L. 650, 713, 728). No incluye retenciones de cuarta o quinta categoría. Consulta con un especialista para tu caso específico.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- App 2: Asistente de Tesis -->
+    <div class="app-panel" id="app1">
+      <div class="app-wrap">
+        <div class="app-desc reveal">
+          <h3>Asistente de estructura de tesis</h3>
+          <p>Responde 4 preguntas simples y obtén la estructura recomendada para tu trabajo de investigación, adaptada a tu carrera y nivel académico.</p>
+          <div class="app-feature">Estructura personalizada por carrera</div>
+          <div class="app-feature">Adaptada al nivel: pregrado, maestría o doctorado</div>
+          <div class="app-feature">Tips específicos para cada sección</div>
+          <div class="app-feature">Compatible con normas APA 7 y reglamentos SUNEDU</div>
+          <p style="margin-top:20px;font-size:13px;color:var(--text-3);line-height:1.6">Para asesoría completa y revisión de tu trabajo, agenda una sesión con nosotros.</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="app-form">
+            <div class="wizard-progress">
+              <div class="wizard-dot active" id="wd0"></div>
+              <div class="wizard-dot" id="wd1"></div>
+              <div class="wizard-dot" id="wd2"></div>
+              <div class="wizard-dot" id="wd3"></div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="wizard-step active" id="ws0">
+              <div class="wizard-title">¿En qué área es tu investigación?</div>
+              <div class="option-grid">
+                <button class="option-btn" onclick="selectWiz(0,'area','Derecho')">⚖️ Derecho</button>
+                <button class="option-btn" onclick="selectWiz(0,'area','Administración')">💼 Administración</button>
+                <button class="option-btn" onclick="selectWiz(0,'area','Educación')">📖 Educación</button>
+                <button class="option-btn" onclick="selectWiz(0,'area','Salud')">🏥 Salud</button>
+                <button class="option-btn" onclick="selectWiz(0,'area','Ingeniería')">⚙️ Ingeniería</button>
+                <button class="option-btn" onclick="selectWiz(0,'area','Ciencias Sociales')">🌐 Ciencias Sociales</button>
+              </div>
+              <div class="wizard-nav"><button class="btn-next" onclick="nextWiz(1)">Siguiente →</button></div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="wizard-step" id="ws1">
+              <div class="wizard-title">¿Cuál es tu nivel académico?</div>
+              <div class="option-grid">
+                <button class="option-btn" onclick="selectWiz(1,'nivel','Pregrado (Bachiller)')">🎓 Pregrado</button>
+                <button class="option-btn" onclick="selectWiz(1,'nivel','Maestría')">📜 Maestría</button>
+                <button class="option-btn" onclick="selectWiz(1,'nivel','Doctorado')">🏆 Doctorado</button>
+                <button class="option-btn" onclick="selectWiz(1,'nivel','Curso / Diplomado')">📋 Curso/Diplomado</button>
+              </div>
+              <div class="wizard-nav">
+                <button class="btn-back" onclick="nextWiz(0)">← Atrás</button>
+                <button class="btn-next" onclick="nextWiz(2)">Siguiente →</button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="wizard-step" id="ws2">
+              <div class="wizard-title">¿Qué enfoque tiene tu investigación?</div>
+              <div class="option-grid">
+                <button class="option-btn" onclick="selectWiz(2,'enfoque','Cuantitativo')">📊 Cuantitativo</button>
+                <button class="option-btn" onclick="selectWiz(2,'enfoque','Cualitativo')">💬 Cualitativo</button>
+                <button class="option-btn" onclick="selectWiz(2,'enfoque','Mixto')">🔄 Mixto</button>
+                <button class="option-btn" onclick="selectWiz(2,'enfoque','Aún no lo sé')">❓ No lo sé aún</button>
+              </div>
+              <div class="wizard-nav">
+                <button class="btn-back" onclick="nextWiz(1)">← Atrás</button>
+                <button class="btn-next" onclick="nextWiz(3)">Siguiente →</button>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="wizard-step" id="ws3">
+              <div class="wizard-title">¿Cuál es el tema de tu investigación?</div>
+              <div class="form-group" style="margin-bottom:8px">
+                <input type="text" id="w-tema" placeholder="Ej: Impacto de la inteligencia artificial en el derecho laboral peruano">
+              </div>
+              <div class="wizard-nav">
+                <button class="btn-back" onclick="nextWiz(2)">← Atrás</button>
+                <button class="btn-next" onclick="generarEstructura()">Generar estructura ✓</button>
+              </div>
+            </div>
+
+            <!-- Result -->
+            <div class="wizard-step" id="ws4">
+              <div id="thesis-output"></div>
+              <div class="wizard-nav" style="margin-top:16px">
+                <button class="btn-back" onclick="resetWiz()">← Nueva consulta</button>
+                <a href="#contacto" class="btn-next" style="text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center">Asesoría completa →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Precios ─── -->
+<section id="precios">
+  <div class="container">
+    <div class="reveal">
+      <span class="badge">Nuestros paquetes</span>
+      <h2 class="section-title">Tarifas claras y transparentes</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Elige el servicio que necesitas. Todos incluyen atención personalizada y comunicación directa por WhatsApp.</p>
+    </div>
+    <div style="margin-top:36px" class="reveal">
+      <div class="price-toggle">
+        <button class="price-tab active" onclick="switchPrice(0)">Asesoría Legal</button>
+        <button class="price-tab" onclick="switchPrice(1)">Asesoría Metodológica</button>
+      </div>
+    </div>
+
+    <!-- Legal Prices -->
+    <div class="price-panel active" id="pp0">
+      <div class="price-card reveal">
+        <div class="price-name">Básico</div>
+        <div><span class="price-amount">S/. 80</span><span class="price-unit">/ consulta</span></div>
+        <p class="price-desc">Consulta express de 45 minutos para orientación legal inicial.</p>
+        <ul class="price-features">
+          <li>Sesión de 45 min (videollamada o presencial)</li>
+          <li>Orientación legal en tu caso</li>
+          <li>Respuesta en 24-48 horas</li>
+          <li>Resumen escrito de la sesión</li>
+        </ul>
+        <a href="https://wa.me/51962620529?text=Hola,%20quiero%20una%20consulta%20express%20legal" target="_blank" class="btn-price btn-price-outline">Agendar consulta</a>
+      </div>
+      <div class="price-card featured reveal reveal-delay-1">
+        <div class="featured-badge">⭐ Más popular</div>
+        <div class="price-name">Estándar</div>
+        <div><span class="price-amount">S/. 350</span><span class="price-unit">/ caso</span></div>
+        <p class="price-desc">Asesoría legal completa con análisis documental y estrategia.</p>
+        <ul class="price-features">
+          <li>2 sesiones de 60 min</li>
+          <li>Análisis de documentos del caso</li>
+          <li>Redacción de cartas o documentos básicos</li>
+          <li>Estrategia legal personalizada</li>
+          <li>Seguimiento por WhatsApp (30 días)</li>
+        </ul>
+        <a href="https://wa.me/51962620529?text=Hola,%20quiero%20el%20paquete%20est%C3%A1ndar%20legal" target="_blank" class="btn-price btn-price-filled">Comenzar ahora</a>
+      </div>
+      <div class="price-card reveal reveal-delay-2">
+        <div class="price-name">Premium</div>
+        <div><span class="price-amount">S/. 800</span><span class="price-unit">+ / caso</span></div>
+        <p class="price-desc">Representación legal completa con seguimiento hasta la resolución.</p>
+        <ul class="price-features">
+          <li>Sesiones ilimitadas hasta resolver</li>
+          <li>Redacción completa de escritos legales</li>
+          <li>Representación ante instituciones</li>
+          <li>Gestión de trámites completa</li>
+          <li>Seguimiento permanente del caso</li>
+          <li>Contacto directo prioritario</li>
+        </ul>
+        <a href="https://wa.me/51962620529?text=Hola,%20quiero%20el%20paquete%20premium%20legal" target="_blank" class="btn-price btn-price-outline">Solicitar cotización</a>
+      </div>
+    </div>
+
+    <!-- Metodología Prices -->
+    <div class="price-panel" id="pp1">
+      <div class="price-card reveal">
+        <div class="price-name">Por capítulo</div>
+        <div><span class="price-amount">S/. 120</span><span class="price-unit">/ capítulo</span></div>
+        <p class="price-desc">Revisión y asesoría de un capítulo específico de tu tesis.</p>
+        <ul class="price-features">
+          <li>Revisión de estructura y contenido</li>
+          <li>Corrección de citas APA 7</li>
+          <li>Observaciones escritas detalladas</li>
+          <li>1 ronda de correcciones</li>
+        </ul>
+        <a href="https://wa.me/51962620529?text=Hola,%20quiero%20asesor%C3%ADa%20por%20cap%C3%ADtulo" target="_blank" class="btn-price btn-price-outline">Consultar</a>
+      </div>
+      <div class="price-card featured reveal reveal-delay-1">
+        <div class="featured-badge">⭐ Más popular</div>
+        <div class="price-name">Tesis completa</div>
+        <div><span class="price-amount">S/. 450</span><span class="price-unit">/ tesis</span></div>
+        <p class="price-desc">Acompañamiento integral desde el diseño hasta la sustentación.</p>
+        <ul class="price-features">
+          <li>Diseño del plan de investigación</li>
+          <li>Asesoría en los 5 capítulos</li>
+          <li>Revisión de referencias y citas APA 7</li>
+          <li>Preparación para sustentación</li>
+          <li>2 rondas de correcciones por capítulo</li>
+          <li>Sesiones por videollamada o presencial</li>
+        </ul>
+        <a href="https://wa.me/51962620529?text=Hola,%20quiero%20asesor%C3%ADa%20completa%20para%20mi%20tesis" target="_blank" class="btn-price btn-price-filled">Empezar mi tesis</a>
+      </div>
+      <div class="price-card reveal reveal-delay-2">
+        <div class="price-name">Maestría & Doctorado</div>
+        <div><span class="price-amount">S/. 800</span><span class="price-unit">+ / proyecto</span></div>
+        <p class="price-desc">Asesoría para investigaciones de posgrado con mayor exigencia metodológica.</p>
+        <ul class="price-features">
+          <li>Diseño metodológico avanzado</li>
+          <li>Asesoría en enfoque mixto o multi-método</li>
+          <li>Apoyo en análisis estadístico (SPSS/ATLAS.ti)</li>
+          <li>Revisión de coherencia metodológica total</li>
+          <li>Preparación para defensa ante comité</li>
+          <li>Apoyo para publicación en revista</li>
+        </ul>
+        <a href="https://wa.me/51962620529?text=Hola,%20necesito%20asesor%C3%ADa%20para%20mi%20tesis%20de%20posgrado" target="_blank" class="btn-price btn-price-outline">Solicitar cotización</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Testimonios ─── -->
+<section id="testimonios">
+  <div class="container">
+    <div class="reveal">
+      <span class="badge">Lo que dicen nuestros clientes</span>
+      <h2 class="section-title light">Resultados que hablan por sí solos</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Gracias a IusMethodus pude defender exitosamente mi tesis de pregrado. El asesor identificó errores metodológicos que yo no había visto y me ayudó a corregirlos a tiempo."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MP</div>
+          <div>
+            <div class="testi-name">María P.</div>
+            <div class="testi-role">Bachiller en Derecho · UNMSM</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Me despidieron sin causa y pensé que no había nada que hacer. IusMethodus me asesoró, presentamos el caso y recuperé todos mis beneficios más la indemnización. Muy recomendado."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">CR</div>
+          <div>
+            <div class="testi-name">Carlos R.</div>
+            <div class="testi-role">Cliente · Derecho Laboral</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Tenía mi contrato de arrendamiento con cláusulas abusivas que no había notado. La revisión de IusMethodus me salvó de un problema enorme antes de firmar."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AL</div>
+          <div>
+            <div class="testi-name">Ana L.</div>
+            <div class="testi-role">Cliente · Derecho Inmobiliario</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Blog / Revista ─── -->
+<section id="blog">
+  <div class="container">
+    <div class="reveal">
+      <span class="badge">Revista IusMethodus</span>
+      <h2 class="section-title">Artículos y recursos jurídicos</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Contenido especializado en derecho peruano y metodología de la investigación. Próximamente nuestra revista indexada.</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal reveal-delay-1">
+        <div class="blog-thumb" style="background:#162236">
+          <span class="blog-cat">Legal</span>
+          <span class="blog-thumb-icon">⚖️</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-date">Mayo 2025</div>
+          <h3 class="blog-title">Derechos del trabajador ante el despido arbitrario en el Perú</h3>
+          <p class="blog-excerpt">Análisis de los mecanismos de protección que ofrece el régimen laboral peruano frente a la extinción injustificada del vínculo laboral.</p>
+          <a href="#contacto" class="blog-link">Leer más →</a>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-2">
+        <div class="blog-thumb" style="background:#1a2a1a">
+          <span class="blog-cat">Metodología</span>
+          <span class="blog-thumb-icon">📚</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-date">Abril 2025</div>
+          <h3 class="blog-title">APA 7 en tesis jurídicas: los errores más comunes y cómo evitarlos</h3>
+          <p class="blog-excerpt">Guía práctica para aplicar correctamente las normas APA séptima edición en investigaciones del campo del derecho y las ciencias sociales.</p>
+          <a href="#contacto" class="blog-link">Leer más →</a>
+        </div>
+      </div>
+      <div class="blog-card reveal reveal-delay-3">
+        <div class="blog-thumb" style="background:#2a1a0a">
+          <span class="blog-cat">Legal</span>
+          <span class="blog-thumb-icon">🏠</span>
+        </div>
+        <div class="blog-body">
+          <div class="blog-date">Marzo 2025</div>
+          <h3 class="blog-title">Cláusulas abusivas en contratos de arrendamiento: qué dice la ley</h3>
+          <p class="blog-excerpt">Revisión de las principales cláusulas que la legislación peruana considera nulas por ser contrarias al orden público y las buenas costumbres.</p>
+          <a href="#contacto" class="blog-link">Leer más →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Contacto ─── -->
+<section id="contacto">
+  <div class="container">
+    <div class="reveal">
+      <span class="badge">Contáctanos</span>
+      <h2 class="section-title">¿Cómo podemos ayudarte?</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Escríbenos por WhatsApp, correo o completa el formulario. Respondemos en menos de 24 horas hábiles.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal reveal-delay-1">
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/51962620529" target="_blank">+51 962 620 529</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <h4>Correo electrónico</h4>
+            <a href="mailto:piero.morales@iusmethodus.com">piero.morales@iusmethodus.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Ubicación</h4>
+            <p>Lima, Perú · Atención presencial y virtual</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <h4>Horario</h4>
+            <p>Lunes a Viernes: 9:00 – 18:00<br>Sábados: 9:00 – 13:00</p>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:13px;color:var(--text-2);margin-bottom:12px">Síguenos en redes sociales:</p>
+          <div class="contact-social">
+            <a href="https://instagram.com/iusmethodus" target="_blank" class="social-btn" title="Instagram">📸</a>
+            <a href="https://facebook.com/iusmethodus" target="_blank" class="social-btn" title="Facebook">👥</a>
+            <a href="https://tiktok.com/@iusmethodus" target="_blank" class="social-btn" title="TikTok">🎵</a>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="contact-form-wrap">
+          <h3>Cuéntanos tu caso</h3>
+          <div id="contact-form">
+            <div class="cform-group">
+              <label>Nombre completo</label>
+              <input type="text" id="cf-nombre" placeholder="Tu nombre">
+            </div>
+            <div class="cform-group">
+              <label>Correo electrónico</label>
+              <input type="email" id="cf-email" placeholder="tu@correo.com">
+            </div>
+            <div class="cform-group">
+              <label>Tipo de consulta</label>
+              <select id="cf-tipo">
+                <option value="">Selecciona un área</option>
+                <option>Derecho Civil</option>
+                <option>Derecho Laboral</option>
+                <option>Derecho Inmobiliario</option>
+                <option>Compliance & Tributario</option>
+                <option>Derecho Registral</option>
+                <option>Asesoría de Tesis</option>
+                <option>Monografía / Ensayo</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="cform-group">
+              <label>Mensaje</label>
+              <textarea id="cf-msg" rows="4" placeholder="Cuéntanos brevemente tu caso o consulta..."></textarea>
+            </div>
+            <button class="btn-send" onclick="enviarFormulario()">Enviar consulta →</button>
+          </div>
+          <div class="form-success" id="form-success">
+            ✓ ¡Gracias! Recibimos tu consulta. Te contactaremos en menos de 24 horas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span>IusMethodus</span>
+        <p>Asesoría jurídica integral y metodológica al servicio de tu éxito. Lima, Perú.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios legales</h4>
+        <a href="#servicios">Derecho Civil</a>
+        <a href="#servicios">Derecho Laboral</a>
+        <a href="#servicios">Derecho Inmobiliario</a>
+        <a href="#servicios">Derecho Registral</a>
+        <a href="#servicios">Compliance</a>
+      </div>
+      <div class="footer-col">
+        <h4>Metodología</h4>
+        <a href="#metodologia">Tesis de pregrado</a>
+        <a href="#metodologia">Tesis de maestría</a>
+        <a href="#metodologia">Monografías</a>
+        <a href="#metodologia">Artículos académicos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Herramientas</h4>
+        <a href="#apps">Calculadora laboral</a>
+        <a href="#apps">Asistente de tesis</a>
+        <a href="#blog">Revista indexada</a>
+        <a href="#contacto">Consulta gratuita</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 IusMethodus. Todos los derechos reservados.</span>
+      <span>
+        <a href="mailto:piero.morales@iusmethodus.com">piero.morales@iusmethodus.com</a> &nbsp;·&nbsp;
+        <a href="https://wa.me/51962620529" target="_blank">+51 962 620 529</a>
+      </span>
+    </div>
   </div>
 </footer>
 
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true,
-  });
-</script>
+<!-- WhatsApp -->
+<a href="https://wa.me/51962620529?text=Hola,%20IusMethodus.%20Tengo%20una%20consulta." target="_blank" class="wa-btn" title="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
 
+<script>
+/* ─── Nav scroll ─── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);
+});
+
+/* ─── Mobile menu ─── */
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+/* ─── Reveal on scroll ─── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ─── App tabs ─── */
+function switchApp(n){
+  document.querySelectorAll('.app-panel').forEach((p,i)=>p.classList.toggle('active',i===n));
+  document.querySelectorAll('.app-tab').forEach((t,i)=>t.classList.toggle('active',i===n));
+}
+
+/* ─── Price toggle ─── */
+function switchPrice(n){
+  document.querySelectorAll('.price-panel').forEach((p,i)=>p.classList.toggle('active',i===n));
+  document.querySelectorAll('.price-tab').forEach((t,i)=>t.classList.toggle('active',i===n));
+}
+
+/* ─── Calculadora Laboral ─── */
+function calcLiquidacion(){
+  const sal=parseFloat(document.getElementById('c-sal').value);
+  const ingStr=document.getElementById('c-ing').value;
+  const cesStr=document.getElementById('c-ces').value;
+  const mot=document.getElementById('c-mot').value;
+  if(!sal||sal<=0||!ingStr||!cesStr){alert('Por favor completa todos los campos.');return;}
+  const ing=new Date(ingStr), ces=new Date(cesStr);
+  if(ces<=ing){alert('La fecha de cese debe ser posterior a la de ingreso.');return;}
+  const diffDays=(ces-ing)/(1000*60*60*24);
+  const years=diffDays/365;
+  const months=years*12;
+
+  // CTS: (salario/12) × meses trabajados
+  const cts=(sal/12)*months;
+
+  // Vacaciones truncas: (salario/12) × meses trabajados
+  const vac=(sal/12)*months;
+
+  // Gratificación trunca: salario/6 × meses en semestre actual
+  const cesM=ces.getMonth();
+  const semStart=new Date(cesM<6?ces.getFullYear()+'-01-01':ces.getFullYear()+'-07-01');
+  const mSem=(ces-semStart)/(1000*60*60*24*30.44);
+  const gra=(sal/6)*Math.min(mSem,6);
+
+  // Indemnización (solo despido arbitrario y > 1 año)
+  let ind=0;
+  const indRow=document.getElementById('r-ind-row');
+  if(mot==='despido'&&years>=1){
+    ind=Math.min(sal*1.5*Math.floor(years),sal*12);
+    indRow.style.display='flex';
+  } else {
+    indRow.style.display='none';
+  }
+
+  const fmt=v=>'S/. '+v.toLocaleString('es-PE',{minimumFractionDigits:2,maximumFractionDigits:2});
+  document.getElementById('r-cts').textContent=fmt(cts);
+  document.getElementById('r-vac').textContent=fmt(vac);
+  document.getElementById('r-gra').textContent=fmt(gra);
+  document.getElementById('r-ind').textContent=fmt(ind);
+  document.getElementById('r-total').textContent=fmt(cts+vac+gra+ind);
+  const res=document.getElementById('calc-result');
+  res.style.display='block';
+  res.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ─── Wizard ─── */
+const wizData={area:'',nivel:'',enfoque:''};
+function selectWiz(step,key,val){
+  wizData[key]=val;
+  const btns=document.querySelectorAll(`#ws${step} .option-btn`);
+  btns.forEach(b=>b.classList.toggle('selected',b.textContent.includes(val.split(' ')[0])||b.textContent===val));
+}
+function nextWiz(n){
+  document.querySelectorAll('.wizard-step').forEach((s,i)=>s.classList.toggle('active',i===n));
+  document.querySelectorAll('.wizard-dot').forEach((d,i)=>{
+    d.classList.toggle('active',i===n);
+    d.classList.toggle('done',i<n);
+  });
+}
+function resetWiz(){
+  wizData.area='';wizData.nivel='';wizData.enfoque='';
+  document.querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected'));
+  document.getElementById('w-tema').value='';
+  nextWiz(0);
+}
+
+function generarEstructura(){
+  const tema=document.getElementById('w-tema').value||'su investigación';
+  const a=wizData.area||'General';
+  const n=wizData.nivel||'Pregrado';
+  const e=wizData.enfoque||'Cuantitativo';
+
+  const estructuras={
+    Cuantitativo:[
+      ['Capítulo I: Planteamiento del problema',['Realidad problemática','Formulación del problema (general y específicos)','Justificación de la investigación','Objetivos (general y específicos)','Hipótesis (general y específicas)'],'Define con precisión el problema y formula hipótesis medibles. Usa estadísticas del Perú para sustentar la realidad problemática.'],
+      ['Capítulo II: Marco teórico',['Antecedentes internacionales y nacionales','Bases teóricas','Definición de términos clave'],'Incluye mínimo 3 antecedentes nacionales y 3 internacionales de los últimos 5 años. Usa fuentes indexadas (Scopus, Redalyc, Scielo).'],
+      ['Capítulo III: Metodología',['Tipo y diseño de investigación','Población y muestra (muestreo probabilístico)','Variables y operacionalización','Técnicas e instrumentos (cuestionario, escala Likert)','Validez y confiabilidad (Alfa de Cronbach)'],'Define claramente tu población y aplica la fórmula de muestreo. La validez por juicio de expertos es obligatoria.'],
+      ['Capítulo IV: Resultados',['Análisis descriptivo (tablas y figuras)','Análisis inferencial (prueba de hipótesis)','Estadístico usado (Pearson, Spearman, Chi-cuadrado)'],'Usa SPSS o Excel. Cada tabla debe tener título, fuente y una interpretación en el texto.'],
+      ['Capítulo V: Discusión y conclusiones',['Discusión de resultados','Conclusiones por objetivo','Recomendaciones'],'Las conclusiones deben responder directamente a cada objetivo específico planteado.']
+    ],
+    Cualitativo:[
+      ['Capítulo I: Planteamiento del problema',['Realidad problemática','Formulación del problema','Justificación','Objetivos de la investigación'],'No incluyas hipótesis en investigación cualitativa pura. Justifica por qué el enfoque cualitativo es el más adecuado.'],
+      ['Capítulo II: Marco teórico',['Antecedentes del estudio','Bases teóricas y conceptuales','Marco conceptual'],'Prioriza autores clásicos y contemporáneos del tema. El marco teórico cualitativo suele ser más interpretativo.'],
+      ['Capítulo III: Metodología',['Paradigma y enfoque (fenomenológico, grounded theory, estudio de caso)','Participantes y muestreo intencional','Técnicas (entrevista, observación, grupo focal)','Instrumento (guía de entrevista)','Análisis de datos (codificación, categorías)'],'Justifica el número de participantes con el criterio de saturación teórica. Mínimo 8-12 entrevistas.'],
+      ['Capítulo IV: Resultados',['Categorías y subcategorías emergentes','Triangulación de fuentes','Interpretación y análisis de contenido'],'Usa ATLAS.ti o NVivo para organizar las categorías. Incluye citas textuales de los participantes.'],
+      ['Capítulo V: Discusión y conclusiones',['Discusión con el marco teórico','Conclusiones por objetivo','Recomendaciones y futuras investigaciones'],'Las conclusiones cualitativas son narrativas, no estadísticas. Interpreta el significado de los hallazgos.']
+    ],
+    Mixto:[
+      ['Capítulo I: Planteamiento del problema',['Realidad problemática','Formulación del problema','Justificación del enfoque mixto','Objetivos generales y específicos'],'El enfoque mixto requiere justificar por qué ni lo cualitativo ni lo cuantitativo solos son suficientes.'],
+      ['Capítulo II: Marco teórico',['Antecedentes nacionales e internacionales','Bases teóricas','Marco conceptual'],'El marco teórico en investigación mixta debe sustentar ambos componentes del diseño.'],
+      ['Capítulo III: Metodología',['Diseño mixto (secuencial, concurrente o transformador)','Componente cuantitativo (muestra, instrumento)','Componente cualitativo (participantes, técnica)','Integración de los componentes'],'Define el peso de cada componente (CUAN + cual, o CUAL + cuan). El diseño más usado es el secuencial explicativo.'],
+      ['Capítulo IV: Resultados integrados',['Resultados cuantitativos','Resultados cualitativos','Integración y metainferencia'],'La clave del diseño mixto es la metainferencia: qué concluyes al integrar ambos componentes.'],
+      ['Capítulo V: Discusión y conclusiones',['Discusión integrada','Conclusiones por fases','Recomendaciones'],'Discute cómo los resultados cualitativos explican o complementan los cuantitativos.']
+    ]
+  };
+
+  const key=e==='Aún no lo sé'?'Cuantitativo':e;
+  const caps=estructuras[key]||estructuras['Cuantitativo'];
+  const extras=n==='Maestría'||n==='Doctorado'?'<div class="thesis-tip">En '+n+', el comité evaluador exige un marco teórico más amplio y una revisión sistemática de la literatura. Considera publicar un artículo derivado de tu tesis en una revista indexada.</div>':
+  '<div class="thesis-tip">Para '+a+' en nivel '+n+': verifica el reglamento específico de tu universidad, ya que algunas instituciones tienen variaciones en la estructura estándar.</div>';
+
+  let html='<div class="thesis-result"><div class="thesis-result-header"><h4>Estructura recomendada · '+a+' ('+n+') · Enfoque '+key+'</h4></div>';
+  caps.forEach(([titulo,items,tip])=>{
+    html+='<div class="thesis-section"><h5>'+titulo+'</h5><ul>';
+    items.forEach(i=>html+='<li>'+i+'</li>');
+    html+='</ul></div><div class="thesis-tip">'+tip+'</div>';
+  });
+  html+=extras+'</div>';
+
+  document.getElementById('thesis-output').innerHTML=html;
+  nextWiz(4);
+}
+
+/* ─── Contact form ─── */
+function enviarFormulario(){
+  const n=document.getElementById('cf-nombre').value;
+  const e=document.getElementById('cf-email').value;
+  const t=document.getElementById('cf-tipo').value;
+  const m=document.getElementById('cf-msg').value;
+  if(!n||!e||!t||!m){alert('Por favor completa todos los campos.');return;}
+  const msg=`Hola IusMethodus, mi nombre es ${n} (${e}). Consulta sobre: ${t}. ${m}`;
+  window.open('https://wa.me/51962620529?text='+encodeURIComponent(msg),'_blank');
+  document.getElementById('form-success').style.display='block';
+  document.getElementById('contact-form').style.opacity='.4';
+  document.getElementById('contact-form').style.pointerEvents='none';
+}
+</script>
 </body>
 </html>
