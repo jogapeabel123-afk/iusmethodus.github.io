@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IUS Methodus · Board</title>
+<meta name="description" content="Pizarra académica interactiva que integra Derecho y Metodología de la Investigación Jurídica." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="inicio">
+  <a class="brand" href="https://iusmethodus.com">
+    <img class="brand-logo" src="assets/ius-methodus-logo.png" alt="Ius Methodus" />
+    <span class="brand-label">
+      <span class="crumbs"><span class="crumb-root">iusmethodus.com</span> <span class="sep">/</span> <span class="crumb-leaf">ius&#8209;board</span></span>
+      <span class="brand-name">Ius<em>Methodus</em><span class="dot">.</span></span>
+    </span>
+  </a>
+
+  <nav class="nav" aria-label="Principal">
+    <a href="https://iusmethodus.com" class="nav-home">← Inicio</a>
+    <a href="#board" class="active">Board</a>
+    <a href="#methodus">Metodología</a>
+    <a href="#derecho">Derecho</a>
+    <a href="#hibrido">Aplicada</a>
+    <a href="#recursos">Recursos</a>
+  </nav>
+
+  <div class="header-tools">
+    <button class="icon-btn" data-theme-toggle aria-label="Cambiar tema">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
+      </svg>
+    </button>
+    <a href="#board" class="btn ghost" style="padding:10px 18px;">
+      Ingresar
+      <svg class="arr" width="14" height="10" viewBox="0 0 14 10" fill="none">
+        <path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-ornament" aria-hidden="true">IM</div>
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Ius Methodus — Edición Académica · 2026</div>
+      <h1 id="hero-title">
+        Piensa como <em>jurista.</em><br/>
+        Investiga como <span class="gold">científico.</span>
+      </h1>
+      <p class="lede">
+        Una pizarra interactiva donde el Derecho y la Metodología de la Investigación Jurídica conviven en un mismo lienzo: nodos arrastrables, conexiones argumentales y un flujo editorial pensado para la academia.
+      </p>
+      <div class="cta-row">
+        <a href="#board" class="btn">
+          Ingresar al Board
+          <svg class="arr" width="14" height="10" viewBox="0 0 14 10" fill="none">
+            <path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.3"/>
+          </svg>
+        </a>
+        <a href="#recursos" class="btn ghost">
+          Explorar Recursos
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-meta">
+      <div class="meta-title">Estructura editorial</div>
+      <dl>
+        <div class="meta-row"><dt>Módulos</dt><dd>06 / <span class="accent">II principales</span></dd></div>
+        <div class="meta-row"><dt>Lienzos interactivos</dt><dd>arrastrar · conectar · zoom</dd></div>
+        <div class="meta-row"><dt>Tipografía</dt><dd>Cormorant · Manrope</dd></div>
+        <div class="meta-row"><dt>Color</dt><dd>Marfil · Negro · <span class="accent">Oro</span></dd></div>
+        <div class="meta-row"><dt>Despliegue</dt><dd>iusmethodus.com/ius&#8209;board</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================================================
+     BOARD INTRO
+     ============================================================ -->
+<section class="module" id="board" aria-labelledby="board-title">
+  <div class="module-head">
+    <div class="module-tag"><span class="roman">§</span> Board · 00</div>
+    <h2 class="module-title" id="board-title">El lienzo es el método.</h2>
+    <p class="module-blurb">Tres canvases editoriales que dialogan entre sí. Mueve nodos, sigue las conexiones, observa cómo una pregunta jurídica se transforma en diseño metodológico.</p>
+  </div>
+
+  <div class="canvas-wrap" data-canvas="derecho">
+    <div class="canvas-toolbar">
+      <div class="tool-group">
+        <span class="label">I · IUS</span>
+        <button class="chip active" data-filter="all">Todo</button>
+        <button class="chip" data-filter="root"><span class="dot"></span>Núcleo</button>
+        <button class="chip" data-filter="accent">Hermenéutica</button>
+      </div>
+      <div class="tool-group">
+        <span class="label">Vista</span>
+        <button class="chip" data-zoom-action="out">−</button>
+        <button class="chip" data-zoom-action="fit">Encajar</button>
+        <button class="chip" data-zoom-action="in">+</button>
+      </div>
+    </div>
+    <div class="canvas-view">
+      <div class="canvas-stage">
+        <svg class="edges" viewBox="0 0 4000 3000" preserveAspectRatio="none"></svg>
+      </div>
+      <div class="canvas-legend">
+        <span><span class="swatch dash"></span>relación</span>
+        <span><span class="swatch solid"></span>flujo argumental</span>
+      </div>
+      <div class="canvas-status">
+        <span>Módulo <b>Derecho</b></span>
+        <span>7 nodos · 9 enlaces</span>
+        <span>Zoom <b data-zoom>100%</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DERECHO MODULE
+     ============================================================ -->
+<section class="module" id="derecho" aria-labelledby="derecho-title">
+  <div class="module-head">
+    <div class="module-tag"><span class="roman">I</span> Módulo Derecho</div>
+    <h2 class="module-title" id="derecho-title">IUS — <em>fundamentos y argumentación.</em></h2>
+    <p class="module-blurb">Árbol normativo expandible, constructor de caso, mapa conceptual y tarjetas conectadas. Seis bloques que recorren del fundamento a la praxis.</p>
+  </div>
+
+  <!-- Tools row -->
+  <div class="canvas-wrap" style="border-bottom:none; background:var(--paper);">
+    <div class="canvas-toolbar">
+      <div class="tool-group">
+        <span class="label">Herramientas</span>
+        <button class="chip active">Árbol normativo</button>
+        <button class="chip">Constructor de caso</button>
+        <button class="chip">Mapa conceptual</button>
+        <button class="chip">Tarjetas conectadas</button>
+      </div>
+      <div class="tool-group">
+        <span class="label">Interacción</span>
+        <button class="chip">clic</button>
+        <button class="chip">arrastrar</button>
+        <button class="chip">zoom</button>
+        <button class="chip">expandir</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     METHODUS MODULE
+     ============================================================ -->
+<section class="module" id="methodus" aria-labelledby="methodus-title">
+  <div class="module-head">
+    <div class="module-tag"><span class="roman">II</span> Módulo Methodus</div>
+    <h2 class="module-title" id="methodus-title">Methodus — <em>del problema al resultado.</em></h2>
+    <p class="module-blurb">Constructor de matriz de consistencia, árbol metodológico y flujo de investigación. Cada bloque guarda progreso y permite editar en línea.</p>
+  </div>
+
+  <div class="canvas-wrap" data-canvas="methodus">
+    <div class="canvas-toolbar">
+      <div class="tool-group">
+        <span class="label">II · METHODUS</span>
+        <button class="chip active" data-filter="all">Todo</button>
+        <button class="chip" data-filter="root"><span class="dot"></span>Problema</button>
+        <button class="chip" data-filter="accent">Hipótesis · Diseño</button>
+      </div>
+      <div class="tool-group">
+        <span class="label">Acción</span>
+        <button class="chip">Editar</button>
+        <button class="chip">Conectar</button>
+        <button class="chip">Guardar</button>
+        <button class="chip" data-zoom-action="fit">Encajar</button>
+      </div>
+    </div>
+    <div class="canvas-view">
+      <div class="canvas-stage">
+        <svg class="edges" viewBox="0 0 4000 3000" preserveAspectRatio="none"></svg>
+      </div>
+      <div class="canvas-legend">
+        <span><span class="swatch dash"></span>dependencia</span>
+        <span><span class="swatch solid"></span>flujo metodológico</span>
+      </div>
+      <div class="canvas-status">
+        <span>Módulo <b>Metodología</b></span>
+        <span>8 nodos · 10 enlaces</span>
+        <span>Zoom <b data-zoom>100%</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HYBRID — Investigación Jurídica Aplicada
+     ============================================================ -->
+<section class="module hybrid" id="hibrido" aria-labelledby="hibrido-title">
+  <div class="module-head">
+    <div class="module-tag"><span class="roman">✦</span> Módulo Híbrido</div>
+    <h2 class="module-title" id="hibrido-title">Investigación <em>Jurídica Aplicada.</em></h2>
+    <p class="module-blurb">El diferencial de Ius Methodus: un flujo único donde lo jurídico y lo metodológico se cruzan. Pasa el puntero por cada etapa para verla en detalle.</p>
+  </div>
+
+  <div class="hybrid-flow">
+    <ol class="flow-list" role="list">
+      <li class="flow-step is-active" data-step="prob">
+        <span class="idx">I</span>
+        <div>
+          <h3>Problema jurídico</h3>
+          <span class="sub">delimitación · pregunta · pertinencia</span>
+        </div>
+        <span class="coherence"><span class="bar" style="--gap: 8%"></span>0.92</span>
+      </li>
+      <li class="flow-step" data-step="norm">
+        <span class="idx">II</span>
+        <div>
+          <h3>Marco normativo</h3>
+          <span class="sub">jerarquía · vigencia · bloque de constitucionalidad</span>
+        </div>
+        <span class="coherence"><span class="bar" style="--gap: 12%"></span>0.88</span>
+      </li>
+      <li class="flow-step" data-step="doct">
+        <span class="idx">III</span>
+        <div>
+          <h3>Marco doctrinal</h3>
+          <span class="sub">estado del arte · autores · posición</span>
+        </div>
+        <span class="coherence"><span class="bar" style="--gap: 18%"></span>0.82</span>
+      </li>
+      <li class="flow-step" data-step="meto">
+        <span class="idx">IV</span>
+        <div>
+          <h3>Diseño metodológico</h3>
+          <span class="sub">enfoque · técnicas · matriz</span>
+        </div>
+        <span class="coherence"><span class="bar" style="--gap: 10%"></span>0.90</span>
+      </li>
+      <li class="flow-step" data-step="res">
+        <span class="idx">V</span>
+        <div>
+          <h3>Resultados</h3>
+          <span class="sub">hallazgos · discusión · contraste</span>
+        </div>
+        <span class="coherence"><span class="bar" style="--gap: 16%"></span>0.84</span>
+      </li>
+      <li class="flow-step" data-step="concl">
+        <span class="idx">VI</span>
+        <div>
+          <h3>Conclusión jurídica</h3>
+          <span class="sub">tesis · recomendaciones · aporte</span>
+        </div>
+        <span class="coherence"><span class="bar" style="--gap: 6%"></span>0.94</span>
+      </li>
+    </ol>
+
+    <div class="flow-canvas" data-flow-detail></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESOURCES
+     ============================================================ -->
+<section class="resources" id="recursos" aria-labelledby="recursos-title">
+  <div class="module-head">
+    <div class="module-tag"><span class="roman">✕</span> Recursos</div>
+    <h2 class="module-title" id="recursos-title">Biblioteca <em>y plantillas.</em></h2>
+    <p class="module-blurb">Materiales descargables, formatos editables y casos guiados para integrar en el aula o en la práctica de investigación.</p>
+  </div>
+
+  <div class="resources-grid">
+    <button class="r-card" data-template="matriz" type="button">
+      <span class="num">R · 01 · Metodología</span>
+      <p>Tabla editable que alinea problema, objetivos, hipótesis, variables, indicadores y metodología en una sola vista.</p>
+      <h4>Matriz de consistencia</h4>
+      <span class="r-cta">Abrir plantilla <svg class="ar" width="20" height="12" viewBox="0 0 20 12"><path d="M0 6h17M13 1l4 5-4 5" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></span>
+    </button>
+    <button class="r-card" data-template="ficha" type="button">
+      <span class="num">R · 02 · Jurisprudencia</span>
+      <p>Ficha estructurada para analizar sentencias: hechos, problema jurídico, ratio decidendi, obiter dicta y comentario crítico.</p>
+      <h4>Ficha jurisprudencial</h4>
+      <span class="r-cta">Abrir plantilla <svg class="ar" width="20" height="12" viewBox="0 0 20 12"><path d="M0 6h17M13 1l4 5-4 5" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></span>
+    </button>
+    <button class="r-card" data-template="caso" type="button">
+      <span class="num">R · 03 · Litigio</span>
+      <p>Esquema para construir teoría del caso: pretensión, fundamentos fáctico, jurídico y probatorio articulados.</p>
+      <h4>Teoría del caso</h4>
+      <span class="r-cta">Abrir plantilla <svg class="ar" width="20" height="12" viewBox="0 0 20 12"><path d="M0 6h17M13 1l4 5-4 5" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></span>
+    </button>
+    <button class="r-card" data-template="interp" type="button">
+      <span class="num">R · 04 · Hermenéutica</span>
+      <p>Analiza una norma desde los siete criterios clásicos de interpretación: literal, sistemático, teleológico, histórico…</p>
+      <h4>Análisis normativo</h4>
+      <span class="r-cta">Abrir plantilla <svg class="ar" width="20" height="12" viewBox="0 0 20 12"><path d="M0 6h17M13 1l4 5-4 5" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></span>
+    </button>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER / CONTACT
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h5>Ius Methodus</h5>
+      <p class="footer-quote">
+        “Donde el método se vuelve forma y la norma se vuelve argumento.”
+        <span class="cite">— Manifiesto Editorial · 2026</span>
+      </p>
+    </div>
+    <div>
+      <h5>Board</h5>
+      <a href="#board">Lienzo principal</a>
+      <a href="#derecho">Derecho</a>
+      <a href="#methodus">Metodología</a>
+      <a href="#hibrido">Investigación Aplicada</a>
+    </div>
+    <div>
+      <h5>Plantillas</h5>
+      <a href="#recursos" data-open-template="matriz">Matriz de consistencia</a>
+      <a href="#recursos" data-open-template="ficha">Ficha jurisprudencial</a>
+      <a href="#recursos" data-open-template="caso">Teoría del caso</a>
+      <a href="#recursos" data-open-template="interp">Análisis normativo</a>
+    </div>
+    <div>
+      <h5>Sitio principal</h5>
+      <a href="https://iusmethodus.com">iusmethodus.com</a>
+      <a href="https://iusmethodus.com">← Volver al inicio</a>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2026 · IUS Methodus</span>
+    <span>iusmethodus.com / ius&#8209;board</span>
+    <span>Ed. I · MMXXVI</span>
+  </div>
+</footer>
+
+<!-- ============================================================
+     SIDEBAR PANEL
+     ============================================================ -->
+<button class="sidebar-trigger" aria-label="Abrir panel lateral">Panel lateral</button>
+<div class="scrim" aria-hidden="true"></div>
+<aside class="sidebar-panel" aria-label="Panel de accesos">
+  <div class="sidebar-head">
+    <h2>Accesos</h2>
+    <button class="icon-btn" data-close-sidebar aria-label="Cerrar panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="sidebar-nav">
+    <a class="sidebar-item" href="#recursos">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      <div class="label-block"><div class="t">Plantillas</div><div class="d">12 formatos</div></div>
+      <span class="count">12</span>
+    </a>
+    <a class="sidebar-item" href="#recursos">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 3h11a4 4 0 0 1 4 4v14H8a4 4 0 0 1-4-4V3z"/><path d="M4 17h15"/></svg>
+      <div class="label-block"><div class="t">Biblioteca</div><div class="d">manuales · tratados</div></div>
+      <span class="count">348</span>
+    </a>
+    <a class="sidebar-item" href="#hibrido">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>
+      <div class="label-block"><div class="t">Casos</div><div class="d">expedientes guiados</div></div>
+      <span class="count">26</span>
+    </a>
+    <a class="sidebar-item" href="#">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3l2.6 6 6.4.6-4.8 4.4 1.4 6.4L12 17l-5.6 3.4L7.8 14 3 9.6l6.4-.6L12 3z"/></svg>
+      <div class="label-block"><div class="t">Favoritos</div><div class="d">tu colección</div></div>
+      <span class="count">07</span>
+    </a>
+    <a class="sidebar-item" href="#">
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+      <div class="label-block"><div class="t">Configuración</div><div class="d">tema · idioma · cuenta</div></div>
+      <span class="count">·</span>
+    </a>
+  </nav>
+  <div style="padding: 24px 28px; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; color: var(--ink-mute);">
+    iusmethodus.com / ius&#8209;board · v1.0
+  </div>
+</aside>
+
+<!-- ============================================================
+     TEMPLATE VIEWER (modal)
+     ============================================================ -->
+<div class="tpl-scrim" data-tpl-close></div>
+<aside class="tpl-viewer" aria-hidden="true" aria-label="Visor de plantillas">
+  <header class="tpl-head">
+    <div class="tpl-id"><span class="tpl-num">R · 00</span><span class="tpl-cat">Plantilla</span></div>
+    <h2 class="tpl-title">—</h2>
+    <div class="tpl-actions">
+      <button class="chip" data-tpl-action="print">Imprimir</button>
+      <button class="chip" data-tpl-action="reset">Restablecer</button>
+      <button class="icon-btn" data-tpl-close aria-label="Cerrar plantilla">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </header>
+  <div class="tpl-body" data-tpl-body></div>
+</aside>
+
+<script src="board.js"></script>
+<script src="templates.js"></script>
+</body>
+</html>
